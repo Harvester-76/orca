@@ -1,3 +1,5 @@
+import { colors, isEinkTheme } from '../theme/mobile-theme'
+
 const REPO_COLOR_PALETTE = [
   '#f97316',
   '#8b5cf6',
@@ -9,6 +11,9 @@ const REPO_COLOR_PALETTE = [
 ]
 
 export function repoColor(name: string): string {
+  if (isEinkTheme()) {
+    return colors.textPrimary
+  }
   let hash = 0
   for (let i = 0; i < name.length; i += 1) {
     hash = (hash * 31 + name.charCodeAt(i)) | 0

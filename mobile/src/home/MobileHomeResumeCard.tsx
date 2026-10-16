@@ -1,11 +1,14 @@
 import { ChevronRight, Terminal } from 'lucide-react-native'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, isEinkTheme, radii, spacing } from '../theme/mobile-theme'
 import type { HomeResumeCard } from '../worktree/home-resume-card'
 
 const REPO_COLORS = ['#8b5cf6', '#3b82f6', '#22c55e', '#f59e0b', '#ef4444', '#ec4899', '#06b6d4']
 
 function homeResumeRepoColor(name: string): string {
+  if (isEinkTheme()) {
+    return colors.textPrimary
+  }
   let hash = 0
   for (let index = 0; index < name.length; index += 1) {
     hash = (hash * 31 + name.charCodeAt(index)) | 0

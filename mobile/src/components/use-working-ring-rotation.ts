@@ -1,12 +1,13 @@
 import { useEffect, useRef } from 'react'
 import { Animated, Easing, Platform } from 'react-native'
+import { isEinkTheme } from '../theme/mobile-theme'
 
 /** The working ring's rotation: one turn per second while `active`, reset to 0 otherwise. */
 export function useWorkingRingRotation(active: boolean): Animated.AnimatedInterpolation<string> {
   const spinValue = useRef(new Animated.Value(0)).current
 
   useEffect(() => {
-    if (active) {
+    if (active && !isEinkTheme()) {
       const animation = Animated.loop(
         Animated.timing(spinValue, {
           toValue: 1,

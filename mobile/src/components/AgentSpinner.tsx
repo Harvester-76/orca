@@ -1,6 +1,8 @@
 import { Activity } from 'lucide-react-native'
 import { Animated, StyleSheet, View } from 'react-native'
 import type { AgentWorkingMode } from '../../../src/shared/agent-status-types'
+import { colors, isEinkTheme } from '../theme/mobile-theme'
+import { agentStatusEinkShapeStyle, type AgentStatusEinkShape } from './agent-status-eink-shapes'
 import { useWorkingRingRotation } from './use-working-ring-rotation'
 
 type WorktreeStatus = 'working' | 'active' | 'permission' | 'done' | 'inactive'
@@ -19,6 +21,14 @@ const STATUS_COLORS: Record<WorktreeStatus, string> = {
   inactive: 'rgba(115,115,115,0.4)'
 }
 
+const EINK_SHAPES: Record<WorktreeStatus, AgentStatusEinkShape> = {
+  working: 'ring-open',
+  active: 'filled',
+  done: 'filled',
+  permission: 'square',
+  inactive: 'ring'
+}
+
 export function AgentSpinner({
   status,
   workingMode
@@ -30,11 +40,20 @@ export function AgentSpinner({
   const rotate = useWorkingRingRotation(status === 'working' && !monitoring)
 
   const color = STATUS_COLORS[status] ?? STATUS_COLORS.inactive
+  const eink = isEinkTheme()
 
   if (monitoring) {
     return (
       <View style={styles.wrapper} accessibilityLabel="Monitoring background tasks">
-        <Activity size={12} color={STATUS_COLORS.working} />
+        <Activity size={12} color={eink ? colors.textPrimary : STATUS_COLORS.working} />
+      </View>
+    )
+  }
+
+  if (eink) {
+    return (
+      <View style={styles.wrapper}>
+        <View style={agentStatusEinkShapeStyle(EINK_SHAPES[status] ?? 'ring', 8)} />
       </View>
     )
   }

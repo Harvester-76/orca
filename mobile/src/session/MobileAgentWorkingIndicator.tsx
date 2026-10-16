@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Animated, StyleSheet, Text, View } from 'react-native'
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, isEinkTheme, spacing, typography } from '../theme/mobile-theme'
 
 /** Animated three-dot "agent is working" row, shown while the active agent is
  *  still producing a reply. Pure presentation — visibility is the caller's call. */
@@ -12,6 +12,10 @@ export function MobileAgentWorkingIndicator(): React.JSX.Element {
   ]
 
   useEffect(() => {
+    if (isEinkTheme()) {
+      dots.forEach((dot) => dot.setValue(1))
+      return undefined
+    }
     const animations = dots.map((dot, i) =>
       Animated.loop(
         Animated.sequence([

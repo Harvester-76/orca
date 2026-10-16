@@ -1,7 +1,8 @@
 import { Activity } from 'lucide-react-native'
 import { Animated, StyleSheet, View } from 'react-native'
 import type { AgentDotState } from '../worktree/agent-row-display'
-import { colors } from '../theme/mobile-theme'
+import { colors, isEinkTheme } from '../theme/mobile-theme'
+import { agentStatusEinkShapeStyle, type AgentStatusEinkShape } from './agent-status-eink-shapes'
 import { useWorkingRingRotation } from './use-working-ring-rotation'
 
 // Per-agent state indicator, 1:1 with desktop AgentStateDot
@@ -21,12 +22,33 @@ const DOT_COLORS: Record<Exclude<AgentDotState, 'working' | 'monitoring'>, strin
 }
 export const AGENT_WORKING_COLOR = '#eab308'
 
+const EINK_DOT_SHAPES: Record<
+  Exclude<AgentDotState, 'working' | 'monitoring'>,
+  AgentStatusEinkShape
+> = {
+  done: 'filled',
+  blocked: 'square',
+  waiting: 'square',
+  failed: 'square',
+  interrupted: 'ring-dotted',
+  unconfirmed: 'ring-thick',
+  idle: 'ring'
+}
+
 /** `unverifiable` is a child row's lost contact: desktop's dashed amber ring, a missing-evidence
  *  mark rather than a state claim. */
 export function AgentStateDot({ state }: { state: AgentDotState | 'unverifiable' }) {
   const rotate = useWorkingRingRotation(state === 'working')
+  const eink = isEinkTheme()
 
   if (state === 'working') {
+    if (eink) {
+      return (
+        <View style={styles.wrapper}>
+          <View style={agentStatusEinkShapeStyle('ring-open', 7)} />
+        </View>
+      )
+    }
     return (
       <View style={styles.wrapper}>
         <Animated.View style={[styles.spinner, { transform: [{ rotate }] }]} />
@@ -37,7 +59,7 @@ export function AgentStateDot({ state }: { state: AgentDotState | 'unverifiable'
   if (state === 'monitoring') {
     return (
       <View style={styles.wrapper} accessibilityLabel="Monitoring background tasks">
-        <Activity size={10} color={AGENT_WORKING_COLOR} />
+        <Activity size={10} color={eink ? colors.textPrimary : AGENT_WORKING_COLOR} />
       </View>
     )
   }
@@ -45,7 +67,15 @@ export function AgentStateDot({ state }: { state: AgentDotState | 'unverifiable'
   if (state === 'unverifiable') {
     return (
       <View style={styles.wrapper} accessibilityLabel="No recent update">
-        <View style={styles.dashedRing} />
+        <View style={[styles.dashedRing, eink && { borderColor: colors.textPrimary }]} />
+      </View>
+    )
+  }
+
+  if (eink) {
+    return (
+      <View style={styles.wrapper}>
+        <View style={agentStatusEinkShapeStyle(EINK_DOT_SHAPES[state], 7)} />
       </View>
     )
   }

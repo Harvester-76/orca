@@ -1,53 +1,31 @@
-// Orca mobile design tokens — matches desktop graphite/dark palette.
+// Orca mobile design tokens. Palettes live in mobile-theme-palettes.ts.
 // All screen files should import from here instead of using inline hex values.
+import {
+  DEFAULT_MOBILE_THEME_ID,
+  MOBILE_THEME_PALETTES,
+  type MobileThemeId,
+  type MobileThemePalette
+} from './mobile-theme-palettes'
 
-export const colors = {
-  bgBase: '#111111',
-  bgPanel: '#1a1a1a',
-  bgRaised: '#242424',
-  borderSubtle: '#2a2a2a',
-  editorSurface: '#1e1e1e',
+// Why mutable: ~160 modules build StyleSheets from `colors` at import time, so the stored theme
+// is applied once at startup, before the app modules load (see index.js), and a change needs a restart.
+export const colors: MobileThemePalette = { ...MOBILE_THEME_PALETTES[DEFAULT_MOBILE_THEME_ID] }
 
-  textPrimary: '#e0e0e0',
-  textSecondary: '#a1a1a1',
-  textMuted: '#8c8c8c',
+let activeThemeId: MobileThemeId = DEFAULT_MOBILE_THEME_ID
 
-  // Crisp near-white surface for the single primary action on a screen (the
-  // worktree FAB). Brighter than textPrimary so it reads as a solid button, not
-  // disabled chrome, while staying monochrome (STYLEGUIDE: color is for state).
-  surfaceBright: '#f5f5f5',
+export function applyMobileTheme(id: MobileThemeId): void {
+  activeThemeId = id
+  Object.assign(colors, MOBILE_THEME_PALETTES[id])
+}
 
-  accentBlue: '#3b82f6',
-  // Text/icon color on a filled accent (accentBlue) button, where the muted
-  // textPrimary would lack contrast against the saturated fill.
-  onAccent: '#ffffff',
+export function getActiveMobileThemeId(): MobileThemeId {
+  return activeThemeId
+}
 
-  statusGreen: '#22c55e',
-  statusAmber: '#f59e0b',
-  statusRed: '#ef4444',
-  // Merge CTA fill + its on-fill text, mirroring the desktop ChecksPanel's
-  // bg-green-600 "Squash and merge" button (green-600 / white).
-  mergeGreen: '#16a34a',
-  onMergeGreen: '#ffffff',
-  // Merged-PR purple, mirroring the desktop ReviewIcon's purple-400/70 tone.
-  statusPurple: '#a78bfa',
-  gitDecorationAdded: '#81b88b',
-  gitDecorationDeleted: '#c74e39',
-  diffAddedBg: 'rgba(129, 184, 139, 0.1)',
-  diffDeletedBg: 'rgba(199, 78, 57, 0.11)',
-
-  syntaxComment: '#6a9955',
-  syntaxKeyword: '#569cd6',
-  syntaxString: '#ce9178',
-  syntaxNumber: '#b5cea8',
-  syntaxType: '#4ec9b0',
-  syntaxFunction: '#dcdcaa',
-  syntaxVariable: '#9cdcfe',
-  syntaxMeta: '#c586c0',
-
-  // Terminal WebView background (Tokyonight) — separate from app chrome
-  terminalBg: '#1a1b26'
-} as const
+// Why: every animation frame is a full-panel refresh on e-ink; a looping one freezes the display.
+export function isEinkTheme(): boolean {
+  return activeThemeId === 'eink'
+}
 
 export const spacing = {
   xs: 4,

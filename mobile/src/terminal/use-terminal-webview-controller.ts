@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react'
+import { resolveMobileTerminalTheme } from './terminal-mobile-theme-override'
 import { readTerminalCellBox, type TerminalCellBox } from './terminal-cell-box'
 import { fitDimensionsFromCell } from './terminal-grid-fit'
 import type {
@@ -51,7 +52,7 @@ export function useTerminalWebViewController(
   transport: TerminalWebViewTransport
 ) {
   const {
-    terminalTheme,
+    terminalTheme: hostTerminalTheme,
     textScale = 1,
     onWebReady,
     onEngineError,
@@ -70,6 +71,10 @@ export function useTerminalWebViewController(
     onCellBoxChange
   } = props
   const { pingsOnForegroundRecovery, post } = transport
+  const terminalTheme = useMemo(
+    () => resolveMobileTerminalTheme(hostTerminalTheme),
+    [hostTerminalTheme]
+  )
   const isWebReadyRef = useRef(false)
   const pendingMessages = useMemo(() => createTerminalWebViewPendingMessages(), [])
   const messageIdRef = useRef(0)

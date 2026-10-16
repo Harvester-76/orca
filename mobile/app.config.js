@@ -11,8 +11,12 @@
 const APS_ENVIRONMENT =
   process.env.ORCA_IOS_APS_ENVIRONMENT === 'production' ? 'production' : 'development'
 
+// Lets a side-by-side build (e.g. a themed fork) install next to the store app.
+const ANDROID_PACKAGE = process.env.ORCA_ANDROID_PACKAGE
+
 module.exports = ({ config }) => ({
   ...config,
+  android: ANDROID_PACKAGE ? { ...config.android, package: ANDROID_PACKAGE } : config.android,
   ios: {
     ...config.ios,
     entitlements: { ...config.ios?.entitlements, 'aps-environment': APS_ENVIRONMENT }

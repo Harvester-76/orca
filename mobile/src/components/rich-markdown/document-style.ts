@@ -1,4 +1,4 @@
-import { colors } from '../../theme/mobile-theme'
+import { colors, getActiveMobileThemeId } from '../../theme/mobile-theme'
 import { TEXT_INPUT_FONT_SIZE } from '../../platform/text-input-font-size'
 
 /**
@@ -16,7 +16,7 @@ import { TEXT_INPUT_FONT_SIZE } from '../../platform/text-input-font-size'
  */
 export function richMarkdownEditorStyle(): string {
   return `    :root {
-      color-scheme: dark;
+      color-scheme: ${getActiveMobileThemeId() === 'dark' ? 'dark' : 'light'};
       --background: ${colors.bgBase};
       --editor-surface: ${colors.bgBase};
       --foreground: ${colors.textPrimary};

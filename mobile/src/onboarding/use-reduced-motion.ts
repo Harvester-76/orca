@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { AccessibilityInfo } from 'react-native'
+import { isEinkTheme } from '../theme/mobile-theme'
 
 /** `null` until the OS preference has been read. */
 export function useReducedMotionEnabled(): boolean | null {
@@ -21,5 +22,5 @@ export function useReducedMotionEnabled(): boolean | null {
     }
   }, [])
 
-  return enabled
+  return isEinkTheme() ? true : enabled
 }

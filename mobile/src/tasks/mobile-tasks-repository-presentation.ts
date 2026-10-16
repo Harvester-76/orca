@@ -4,6 +4,7 @@ import {
   type HostContextLabelSources
 } from '../../../src/shared/worktree/host-context-labels'
 import { colors } from './mobile-tasks-dependencies'
+import { repoColor } from '../worktree/repo-color'
 import { taskTime } from './mobile-tasks-item-mapping'
 import type { TaskItem } from './mobile-tasks-project-workspace-types'
 import type { RepoSummary } from './mobile-tasks-provider-detail-types'
@@ -21,14 +22,7 @@ export function buildPartialRepositoryNotice(failedCount: number, totalCount: nu
   return `${failedCount} of ${repositoryCount(totalCount)} failed to load.`
 }
 
-export function repoColor(name: string): string {
-  const palette = ['#f97316', '#8b5cf6', '#06b6d4', '#ec4899', '#84cc16', '#f59e0b', '#6366f1']
-  let hash = 0
-  for (let i = 0; i < name.length; i += 1) {
-    hash = (hash * 31 + name.charCodeAt(i)) | 0
-  }
-  return palette[Math.abs(hash) % palette.length]!
-}
+export { repoColor }
 
 /**
  * A repo picker row's detail: its host, as the desktop's picker names it, then its path. Hosts are

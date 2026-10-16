@@ -19,7 +19,7 @@ import {
 import { isShellActivityToolCall } from '../../../src/shared/native-chat-tool-icon'
 import type { NativeChatBlock } from '../../../src/shared/native-chat-types'
 import { nativeChatToolLineIdentity } from '../../../src/shared/native-chat-tool-line-identity'
-import { colors } from '../theme/mobile-theme'
+import { colors, isEinkTheme } from '../theme/mobile-theme'
 import { styles } from './mobile-native-chat-message-styles'
 
 const TOOL_PAIR_REVEAL_PAGE = 6
@@ -149,6 +149,9 @@ function PulsingText({
 }): React.JSX.Element {
   const pulse = useRef(new Animated.Value(1)).current
   useEffect(() => {
+    if (isEinkTheme()) {
+      return undefined
+    }
     const animation = Animated.loop(
       Animated.sequence([
         Animated.timing(pulse, { toValue: 0.45, duration: 700, useNativeDriver: true }),
