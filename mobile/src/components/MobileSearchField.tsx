@@ -9,7 +9,7 @@ import {
   type TextInputProps
 } from 'react-native'
 import { Search, X } from 'lucide-react-native'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, isEinkTheme, radii, spacing } from '../theme/mobile-theme'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
 
 // Why: toolbar/list chrome paints and settles after the open tap; native
@@ -136,7 +136,7 @@ export function MobileSearchField({
           {/* Why: chip + larger hit target — a bare 14px X was hard to tap and
               read as decoration rather than a clear control. */}
           <View style={styles.clearChip}>
-            <X size={12} color={colors.surfaceBright} strokeWidth={2.6} />
+            <X size={12} color={colors.onAccent} strokeWidth={2.6} />
           </View>
         </Pressable>
       ) : null}
@@ -196,6 +196,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     // Why: textMuted reads as a solid chip on bgRaised; borderSubtle was nearly
     // invisible and made the clear control feel like decorative chrome.
-    backgroundColor: colors.textMuted
+    // E-ink: mid-gray dithers in fast refresh mode, so the chip is solid black.
+    backgroundColor: isEinkTheme() ? colors.textPrimary : colors.textMuted
   }
 })

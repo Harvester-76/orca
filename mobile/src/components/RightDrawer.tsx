@@ -12,7 +12,7 @@ import Animated, {
   Extrapolation
 } from 'react-native-reanimated'
 import { useBackClaim } from '../navigation/use-back-claim'
-import { colors, spacing } from '../theme/mobile-theme'
+import { colors, isEinkTheme, spacing } from '../theme/mobile-theme'
 // Why: mount-before-commit logic is anchor-agnostic, so the X-axis drawer reuses
 // the exact same gate as BottomDrawer rather than duplicating it.
 import { resolveBottomDrawerMounted } from './bottom-drawer-mount-state'
@@ -224,7 +224,8 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 16,
     borderBottomLeftRadius: 16,
     paddingHorizontal: spacing.md,
-    borderLeftWidth: StyleSheet.hairlineWidth,
+    // E-ink: a solid outline replaces the shadow.
+    borderLeftWidth: isEinkTheme() ? 2 : StyleSheet.hairlineWidth,
     borderLeftColor: colors.borderSubtle,
     ...Platform.select({
       ios: {
