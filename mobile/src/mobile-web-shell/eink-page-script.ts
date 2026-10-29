@@ -3,7 +3,8 @@
 // turns borders, coloured fills and status dots into ink so the threshold cannot erase them.
 const PAGE_CSS = [
   'html{filter:grayscale(1) brightness(.75) contrast(100)}',
-  '*,*::before,*::after{box-shadow:none!important;text-shadow:none!important;background-image:none!important}'
+  '*,*::before,*::after{box-shadow:none!important;text-shadow:none!important;background-image:none!important}',
+  'svg,svg *{stroke-width:3!important}'
 ].join('\n')
 
 const PAGE_SCRIPT = String.raw`(function(){
@@ -15,6 +16,26 @@ const PAGE_SCRIPT = String.raw`(function(){
  const SIDES=['top','right','bottom','left'];
  const set=(el,name,value)=>el.style.setProperty(name,value,'important');
  const outline=(el,width)=>{set(el,'border',width+'px solid #000');set(el,'box-sizing','border-box')};
+ const wide=()=>innerWidth>=900;
+ const hasOwnText=el=>Array.from(el.childNodes).some(n=>n.nodeType===3&&n.textContent.trim());
+ const sidebarText=(el,rect)=>wide()&&rect.width>0&&rect.right<=innerWidth*0.42&&hasOwnText(el);
+ function scaleText(el,cs){
+  const fs=parseFloat(cs.fontSize);
+  if(el.dataset.einkFs&&Math.abs(fs-parseFloat(el.dataset.einkFs))<0.01) return;
+  const target=fs*1.2;
+  set(el,'font-size',target+'px');
+  const lh=parseFloat(cs.lineHeight);
+  if(!isNaN(lh)) set(el,'line-height',(lh*1.2)+'px');
+  el.dataset.einkFs=target;
+ }
+ function pillPadding(el,rect){
+  const cs=getComputedStyle(el);
+  const h=rect.height,w=rect.width;
+  const radius=parseFloat(cs.borderTopLeftRadius)||0;
+  if(h>=24&&h<=52&&w<=360&&radius>=8&&parseFloat(cs.borderTopWidth)>0&&el.textContent.trim().length>0&&parseFloat(cs.paddingLeft)<14){
+   set(el,'padding-left','20px');set(el,'padding-right','20px');
+  }
+ }
  function ink(el){
   if(el.nodeType!==1) return;
   const cs=getComputedStyle(el);
@@ -67,6 +88,8 @@ const PAGE_SCRIPT = String.raw`(function(){
     else if(sheet) outline(el,3);
    }
   }
+  if(sidebarText(el,rect)) scaleText(el,cs);
+  pillPadding(el,rect);
  }
  function walk(n){ if(n.nodeType!==1) return; ink(n); for(const c of n.querySelectorAll('*')) ink(c); }
  const queue=new Set();
