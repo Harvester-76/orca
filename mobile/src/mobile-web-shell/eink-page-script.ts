@@ -1,10 +1,13 @@
 // The host page is served by the desktop and knows nothing of E-ink, so the shell restyles it
-// before it runs: a luminance threshold makes everything pure black or white, and the script
-// turns borders, coloured fills and status dots into ink so the threshold cannot erase them.
+// before it runs. Colours are mapped explicitly (ink on paper, ink-on-ink inverted) instead of
+// thresholding the whole page: a threshold erases the grey edge pixels that make glyphs smooth.
 const PAGE_CSS = [
-  'html{filter:grayscale(1) brightness(.75) contrast(100)}',
   '*,*::before,*::after{box-shadow:none!important;text-shadow:none!important;background-image:none!important}',
-  'svg,svg *{stroke-width:3!important}'
+  'svg,svg *{stroke-width:3!important}',
+  'svg[stroke]:not([stroke="none"]),svg *[stroke]:not([stroke="none"]){stroke:currentColor!important}',
+  'svg[fill]:not([fill="none"]),svg *[fill]:not([fill="none"]){fill:currentColor!important}',
+  'input::placeholder,textarea::placeholder{color:#000!important;opacity:1!important}',
+  'img,canvas,video{filter:grayscale(1) contrast(1.4)}'
 ].join('\n')
 
 const PAGE_SCRIPT = String.raw`(function(){
@@ -19,6 +22,16 @@ const PAGE_SCRIPT = String.raw`(function(){
  const wide=()=>innerWidth>=900;
  const hasOwnText=el=>Array.from(el.childNodes).some(n=>n.nodeType===3&&n.textContent.trim());
  const sidebarText=(el,rect)=>wide()&&rect.width>0&&rect.right<=innerWidth*0.42&&hasOwnText(el);
+ // Lightness of the paper under an element, so ink on a dark fill is drawn white.
+ const paper=new WeakMap();
+ function paperUnder(el){
+  if(!el) return 1;
+  if(paper.has(el)) return paper.get(el);
+  const bg=rgba(getComputedStyle(el).backgroundColor);
+  const value=bg.a>0.5?lum(bg):paperUnder(el.parentElement);
+  paper.set(el,value);
+  return value;
+ }
  function scaleText(el,cs){
   const fs=parseFloat(cs.fontSize);
   if(el.dataset.einkFs&&Math.abs(fs-parseFloat(el.dataset.einkFs))<0.01) return;
@@ -46,11 +59,13 @@ const PAGE_SCRIPT = String.raw`(function(){
   const screenArea=innerWidth*innerHeight;
   if(bg.a>0.05&&bg.a<0.95&&bg.r<30&&bg.g<30&&bg.b<30&&w>innerWidth*0.6&&h>innerHeight*0.6){
    set(el,'background-color','rgba(255,255,255,0.92)');
+   paper.set(el,1);
    return;
   }
   if(bg.a>0.05&&((h<=2&&w>=24)||(w<=2&&h>=24))){
    set(el,'background-color','#000');
    set(el,h<=2?'min-height':'min-width','2px');
+   paper.set(el,0);
    return;
   }
   let bordered=false;
@@ -70,23 +85,35 @@ const PAGE_SCRIPT = String.raw`(function(){
    if(track) outline(track,2);
    return;
   }
+  let own=null;
   if(bg.a>0.05){
+   const L=lum(bg);
    if(sat(bg)>0.2){
     set(el,'background-color','#000');
+    own=0;
     // Red marks attention or failure: a square keeps it apart from the round "done" dot.
     if(small&&bg.r>bg.g+80&&bg.r>bg.b+80) set(el,'border-radius','0');
    }
-   else if(small&&lum(bg)>0.2&&lum(bg)<0.95){
+   else if(small&&L>0.2&&L<0.95){
     set(el,'background-color','transparent');
     outline(el,2);
    }
-   else if(!bordered){
-    const radius=parseFloat(cs.borderTopLeftRadius)||0;
-    const tile=radius>=6&&w>=24&&h>=24&&lum(bg)>0.8&&lum(bg)<0.995&&w*h<screenArea*0.4;
-    const sheet=radius>=14&&w>=300&&h>=200&&lum(bg)>=0.995&&w*h<screenArea*0.6;
-    if(tile) outline(el,2);
-    else if(sheet) outline(el,3);
+   else{
+    if(!bordered){
+     const radius=parseFloat(cs.borderTopLeftRadius)||0;
+     const tile=radius>=6&&w>=24&&h>=24&&L>0.8&&L<0.995&&w*h<screenArea*0.4;
+     const sheet=radius>=14&&w>=300&&h>=200&&L>=0.995&&w*h<screenArea*0.6;
+     if(tile) outline(el,2);
+     else if(sheet) outline(el,3);
+    }
+    if(bg.a<0.9) set(el,'background-color','transparent');
+    else if(L>=0.45){set(el,'background-color','#fff');own=1}
+    else{set(el,'background-color','#000');own=0}
    }
+  }
+  paper.set(el,own!==null?own:paperUnder(el.parentElement));
+  if(hasOwnText(el)||el.tagName==='INPUT'||el.tagName==='TEXTAREA'||el.tagName.toLowerCase()==='svg'){
+   set(el,'color',paper.get(el)<0.45?'#fff':'#000');
   }
   if(sidebarText(el,rect)) scaleText(el,cs);
   pillPadding(el,rect);
