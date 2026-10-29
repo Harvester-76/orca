@@ -4,11 +4,13 @@ package expo.modules.orcamobilewebshell
 internal class MobileWebShellAppliedProps(
   private val generationDirectory: String,
   val sessionId: String,
-  private val bridgeEnabled: Boolean
+  private val bridgeEnabled: Boolean,
+  private val documentScript: String
 ) {
   /** Compare fields explicitly so adding a record field cannot silently add a reload trigger. */
   fun matches(other: MobileWebShellAppliedProps): Boolean =
     generationDirectory == other.generationDirectory &&
       sessionId == other.sessionId &&
-      bridgeEnabled == other.bridgeEnabled
+      bridgeEnabled == other.bridgeEnabled &&
+      documentScript == other.documentScript
 }

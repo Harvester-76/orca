@@ -2,7 +2,7 @@ import { QrCode } from 'lucide-react-native'
 import { Pressable, ScrollView, Text, View } from 'react-native'
 import type { Translate } from '../i18n/mobile-i18n'
 import { useMobileTranslation } from '../i18n/use-mobile-translation'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 
@@ -140,13 +140,13 @@ const styles = themedStyleSheet(() => ({
     gap: 14,
     paddingVertical: spacing.lg
   },
-  stepRowBorder: { borderTopWidth: 1, borderTopColor: colors.borderSubtle },
+  stepRowBorder: { borderTopWidth: einkBorderWidth(1), borderTopColor: colors.borderSubtle },
   stepNum: {
     width: 28,
     height: 28,
     borderRadius: 8,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     alignItems: 'center',
     justifyContent: 'center',

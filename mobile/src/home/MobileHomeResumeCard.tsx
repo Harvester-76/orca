@@ -1,6 +1,6 @@
 import { ChevronRight, Terminal } from 'lucide-react-native'
 import { Pressable, Text, View } from 'react-native'
-import { colors, einkSafeColor, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, einkSafeColor, radii, spacing } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 import type { HomeResumeCard } from '../worktree/home-resume-card'
@@ -61,7 +61,7 @@ const styles = themedStyleSheet(() => ({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     paddingLeft: spacing.md,

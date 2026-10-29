@@ -11,7 +11,7 @@ import {
 import { useHostDisplay } from '../transport/use-host-display'
 import type { MobileConnectionPath } from '../transport/stable-logical-rpc-client'
 import type { ConnectionState, HostCatalogEntry, HostProfile } from '../transport/types'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 import { homeHostWorktreeSummary, type HostWorktreeInfo } from '../worktree/home-worktree-info'
@@ -179,7 +179,7 @@ const styles = themedStyleSheet(() => ({
     alignItems: 'center',
     borderRadius: radii.card,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     overflow: 'hidden'
   },

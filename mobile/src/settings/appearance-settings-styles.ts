@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 
 export const appearanceSettingsStyles = themedStyleSheet(() => ({
@@ -53,7 +53,7 @@ export const appearanceSettingsStyles = themedStyleSheet(() => ({
     marginTop: spacing.sm
   },
   separator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginLeft: spacing.md + 2
   },

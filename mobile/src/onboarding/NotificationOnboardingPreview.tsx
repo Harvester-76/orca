@@ -3,7 +3,7 @@ import { Animated, Easing, Text, View } from 'react-native'
 import { OrcaLogo } from '../components/OrcaLogo'
 import type { Translate } from '../i18n/mobile-i18n'
 import { useMobileTranslation } from '../i18n/use-mobile-translation'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 import { useReducedMotionEnabled } from '../platform/use-reduced-motion'
@@ -155,7 +155,7 @@ const styles = themedStyleSheet(() => ({
     gap: spacing.md,
     backgroundColor: colors.bgPanel,
     borderColor: colors.borderSubtle,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderRadius: radii.card,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.md

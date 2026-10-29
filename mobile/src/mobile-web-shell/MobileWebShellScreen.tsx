@@ -7,7 +7,8 @@ import {
   parseMobileWebShellLoadState
 } from '../../modules/orca-mobile-web-shell/src'
 import { HostRouteNoticeBanner } from '../components/HostRouteNoticeBanner'
-import { colors } from '../theme/mobile-theme'
+import { colors, isEinkTheme } from '../theme/mobile-theme'
+import { EINK_PAGE_SCRIPT } from './eink-page-script'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { useMobileUiLocale } from '../i18n/use-mobile-translation'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
@@ -300,6 +301,7 @@ export function MobileWebShellScreen({
         generationDirectory={state.generationDirectory}
         sessionId={state.sessionId}
         bridgeEnabled={bridge.bridgeEnabled}
+        documentScript={isEinkTheme() ? EINK_PAGE_SCRIPT : ''}
         onBridgeMessage={bridge.onBridgeMessage}
         onExternalNavigation={(event) => {
           const target = cancelledShellNavigationTarget(event.nativeEvent.url)

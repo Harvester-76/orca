@@ -42,6 +42,10 @@ class OrcaMobileWebShellModule : Module() {
         view.setBridgeEnabled(value)
       }
 
+      Prop("documentScript") { view: OrcaMobileWebShellView, value: String? ->
+        view.setDocumentScript(value ?: "")
+      }
+
       AsyncFunction("postBridgeMessage") { view: OrcaMobileWebShellView, json: String ->
         view.postBridgeMessage(json)
       }

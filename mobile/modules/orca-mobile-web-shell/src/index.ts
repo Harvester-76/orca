@@ -16,6 +16,8 @@ export type OrcaMobileWebShellViewProps = ViewProps & {
   sessionId: string
   // Bridge is off by default with nothing registered. Opt-in on Android below WEB_MESSAGE_LISTENER/Chromium 88 fails isolation-unavailable instead of loading unfenced.
   bridgeEnabled?: boolean
+  /** JS run in the page before its own scripts; empty leaves the page untouched. */
+  documentScript?: string
   onLoadState?: (event: NativeSyntheticEvent<MobileWebShellLoadStatePayload>) => void
   // Raw JSON from window.orcaBridge; native silently rejects other origins/frames/WebViews and envelopes above 640 KiB (MobileWebShellBridge.maxMessageByteCount).
   onBridgeMessage?: (event: NativeSyntheticEvent<MobileWebShellBridgeMessagePayload>) => void

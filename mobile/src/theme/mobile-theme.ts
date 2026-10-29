@@ -136,9 +136,10 @@ export const einkPalette: MobilePalette = {
   chatUserBorder: '#000000',
   chatForegroundStrong: '#000000',
 
+  // Grey text dithers on the panel, so every text tier is solid black.
   textPrimary: '#000000',
-  textSecondary: '#222222',
-  textMuted: '#444444',
+  textSecondary: '#000000',
+  textMuted: '#000000',
 
   surfaceBright: '#000000',
 
@@ -198,6 +199,13 @@ export function getMobileThemeKey(): MobileThemeKey {
 
 export function isEinkTheme(): boolean {
   return einkActive
+}
+
+// A hairline is one device pixel, which the panel drops; E-ink draws every border at least this thick.
+const EINK_MIN_BORDER_WIDTH = 2
+
+export function einkBorderWidth(width: number): number {
+  return einkActive ? Math.max(width, EINK_MIN_BORDER_WIDTH) : width
 }
 
 // Brand and badge hues carry no meaning on a monochrome panel, so they render as plain ink there.

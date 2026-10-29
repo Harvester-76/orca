@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 
 export const connectionDiagnosticsScreenStyles = themedStyleSheet(() => ({
@@ -28,7 +28,7 @@ export const connectionDiagnosticsScreenStyles = themedStyleSheet(() => ({
   },
   hostChipActive: {
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   hostChipText: { fontSize: typography.metaSize, color: colors.textSecondary, maxWidth: 160 },
@@ -42,7 +42,7 @@ export const connectionDiagnosticsScreenStyles = themedStyleSheet(() => ({
   statusText: { fontSize: typography.metaSize, color: colors.textSecondary },
   diagnosisCard: {
     backgroundColor: colors.bgPanel,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: 10,
     padding: spacing.md,

@@ -9,7 +9,7 @@ import {
   type AccountsSnapshot,
   type ProviderKey
 } from '../components/AccountUsage'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 import type { HostProfile } from '../transport/types'
@@ -109,7 +109,7 @@ const styles = themedStyleSheet(() => ({
   },
   card: {
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     paddingHorizontal: spacing.md,

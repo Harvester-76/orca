@@ -47,6 +47,8 @@ internal class OrcaMobileWebShellView(
   private var generationDirectory = ""
   private var sessionId = ""
   private var bridgeEnabled = false
+  private var documentScript = ""
+  private var documentScriptHandle: ScriptHandler? = null
   private var bridgeInstalled = false
   private val bridgeGate = MobileWebShellBridgeGate()
   // The page sends ready before native replies; volatile proxy state crosses interceptor/UI threads.
@@ -75,9 +77,13 @@ internal class OrcaMobileWebShellView(
     bridgeEnabled = value
   }
 
+  fun setDocumentScript(value: String) {
+    documentScript = value
+  }
+
   /** Apply unordered props together; identical triples do not retry. Recovery requires a remount. */
   fun propsDidUpdate() {
-    val next = MobileWebShellAppliedProps(generationDirectory, sessionId, bridgeEnabled)
+    val next = MobileWebShellAppliedProps(generationDirectory, sessionId, bridgeEnabled, documentScript)
     if (applied?.matches(next) == true) return
     applied = next
     documentFailed = false
@@ -109,6 +115,8 @@ internal class OrcaMobileWebShellView(
       failPropUpdate(MobileWebShellFailureReason.ISOLATION_UNAVAILABLE)
       return
     }
+    documentScriptHandle?.remove()
+    documentScriptHandle = installMobileWebShellDocumentScript(view, origin, documentScript)
     if (!applyBridgeListener(view, origin)) {
       failPropUpdate(MobileWebShellFailureReason.ISOLATION_UNAVAILABLE)
       return
@@ -194,6 +202,8 @@ internal class OrcaMobileWebShellView(
     webView = null
     blocker?.remove()
     blocker = null
+    documentScriptHandle?.remove()
+    documentScriptHandle = null
     served = null
     documentFailed = false
     view.stopLoading()
