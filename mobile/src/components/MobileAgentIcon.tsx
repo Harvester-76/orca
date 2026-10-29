@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 import type { ImageSourcePropType } from 'react-native'
 import { Terminal } from 'lucide-react-native'
 import Svg, { Defs, G, LinearGradient, Path, Stop } from 'react-native-svg'
-import { colors } from '../theme/mobile-theme'
+import { colors, isEinkTheme } from '../theme/mobile-theme'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 import { MOBILE_AGENT_CATALOG } from '../tasks/mobile-agent-catalog'
 import { MOBILE_AGENT_ICON_ASSETS } from './mobile-agent-icon-assets'
@@ -39,7 +39,10 @@ function OmpIcon({ size = 16 }: { size?: number }) {
           <Stop offset="1" stopColor="#5ad8e6" />
         </LinearGradient>
       </Defs>
-      <Path fill={`url(#${gradientId})`} d="M10 14h44v9H43v33h-9V23h-9v22h-9V23H10z" />
+      <Path
+        fill={isEinkTheme() ? colors.textPrimary : `url(#${gradientId})`}
+        d="M10 14h44v9H43v33h-9V23h-9v22h-9V23H10z"
+      />
     </Svg>
   )
 }

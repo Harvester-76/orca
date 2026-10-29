@@ -1,11 +1,13 @@
 import { useEffect, useRef } from 'react'
 import { Animated, Easing, Platform } from 'react-native'
+import { isEinkTheme } from '../theme/mobile-theme'
 
 export function useWorkingRingRotation(active: boolean): Animated.AnimatedInterpolation<string> {
   const spinValue = useRef(new Animated.Value(0)).current
 
   useEffect(() => {
-    if (active) {
+    // E-ink: every frame of a looping animation is a full-panel refresh.
+    if (active && !isEinkTheme()) {
       const animation = Animated.loop(
         Animated.timing(spinValue, {
           toValue: 1,

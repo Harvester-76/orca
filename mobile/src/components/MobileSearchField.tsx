@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import { Search, X } from 'lucide-react-native'
 import { useMobileTranslation } from '../i18n/use-mobile-translation'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, isEinkTheme, radii, spacing } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
@@ -134,7 +134,7 @@ export function MobileSearchField({
         >
           {/* Use chip and large hit target: bare 14px X looked decorative and was hard to tap. */}
           <View style={styles.clearChip}>
-            <X size={12} color={colors.surfaceBright} strokeWidth={2.6} />
+            <X size={12} color={colors.onAccent} strokeWidth={2.6} />
           </View>
         </Pressable>
       ) : null}
@@ -191,6 +191,7 @@ const styles = themedStyleSheet(() => ({
     alignItems: 'center',
     justifyContent: 'center',
     // textMuted makes solid clear chip on bgRaised; borderSubtle looked decorative.
-    backgroundColor: colors.textMuted
+    // E-ink: mid-gray dithers in fast refresh, so the chip is solid black.
+    backgroundColor: isEinkTheme() ? colors.textPrimary : colors.textMuted
   }
 }))

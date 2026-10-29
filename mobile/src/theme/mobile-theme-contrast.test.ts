@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { paletteForScheme } from './mobile-theme'
+import { einkPalette, paletteForScheme, type MobilePalette } from './mobile-theme'
 
 function channelLuminance(channel: number): number {
   const value = channel / 255
@@ -23,9 +23,13 @@ function contrastRatio(foreground: string, background: string): number {
   return (lighter + 0.05) / (darker + 0.05)
 }
 
-describe.each(['dark', 'light'] as const)('mobile text contrast (%s)', (scheme) => {
-  const colors = paletteForScheme(scheme)
+const palettes: [string, MobilePalette][] = [
+  ['dark', paletteForScheme('dark')],
+  ['light', paletteForScheme('light')],
+  ['eink', einkPalette]
+]
 
+describe.each(palettes)('mobile text contrast (%s)', (_name, colors) => {
   // Light bgRaised is desktop's own --secondary under --muted-foreground (4.36:1), so only page surfaces are held to 4.5.
   it('keeps muted text readable on page and panel surfaces', () => {
     for (const surface of [colors.bgBase, colors.bgPanel]) {

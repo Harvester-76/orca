@@ -1,6 +1,6 @@
 import { ChevronRight, Terminal } from 'lucide-react-native'
 import { Pressable, Text, View } from 'react-native'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkSafeColor, radii, spacing } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 import type { HomeResumeCard } from '../worktree/home-resume-card'
@@ -41,7 +41,7 @@ export function MobileHomeResumeCard(props: {
           <View
             style={[
               styles.repoDot,
-              { backgroundColor: homeResumeRepoColor(props.card.worktree.repo) }
+              { backgroundColor: einkSafeColor(homeResumeRepoColor(props.card.worktree.repo)) }
             ]}
           />
           <Text style={styles.resumeSubText} numberOfLines={1}>

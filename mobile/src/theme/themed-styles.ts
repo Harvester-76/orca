@@ -1,15 +1,15 @@
 import { StyleSheet } from 'react-native'
-import { getMobileColorScheme, type MobileColorScheme } from './mobile-theme'
+import { getMobileThemeKey, type MobileThemeKey } from './mobile-theme'
 
-// Module-scope styles that read `colors`: built once per scheme, and every key reads the current scheme's copy.
+// Module-scope styles that read `colors`: built once per theme, and every key reads the current theme's copy.
 export function themedStyles<T extends Record<string, unknown>>(create: () => T): T {
-  const built = new Map<MobileColorScheme, T>()
+  const built = new Map<MobileThemeKey, T>()
   const current = (): T => {
-    const scheme = getMobileColorScheme()
-    let styles = built.get(scheme)
+    const theme = getMobileThemeKey()
+    let styles = built.get(theme)
     if (styles === undefined) {
       styles = create()
-      built.set(scheme, styles)
+      built.set(theme, styles)
     }
     return styles
   }

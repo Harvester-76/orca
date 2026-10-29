@@ -3,6 +3,7 @@ import type { Repo as SharedRepo } from '../../../src/shared/repo-types'
 import type { RpcClient } from '../transport/rpc-client'
 import type { SetupHookTrust } from '../tasks/setup-hook-trust'
 import { resolveRepoBadgeColor } from '../../../src/shared/repo-badge-color'
+import { einkSafeColor } from '../theme/mobile-theme'
 
 export type MobileWorkspaceRepo = Pick<SharedRepo, 'id' | 'displayName' | 'path'> &
   Partial<
@@ -50,5 +51,5 @@ export type SetupHookDetails = {
 }
 
 export function getMobileWorkspaceRepoBadgeColor(repo: MobileWorkspaceRepo | null): string {
-  return resolveRepoBadgeColor(repo?.badgeColor)
+  return einkSafeColor(resolveRepoBadgeColor(repo?.badgeColor))
 }

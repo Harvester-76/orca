@@ -3,8 +3,8 @@ import { useSyncExternalStore } from 'react'
 import { AppState, Appearance } from 'react-native'
 import { applyMobileColorScheme } from './mobile-theme'
 
-// Same choices as desktop's theme setting; System follows the phone.
-export type MobileAppearancePreference = 'system' | 'light' | 'dark'
+// Same choices as desktop's theme setting, plus E-ink for monochrome panels; System follows the phone.
+export type MobileAppearancePreference = 'system' | 'light' | 'dark' | 'eink'
 
 const APPEARANCE_KEY = 'orca:appearance'
 
@@ -15,7 +15,7 @@ let started: Promise<void> | null = null
 const preferenceListeners = new Set<() => void>()
 
 function isAppearancePreference(value: unknown): value is MobileAppearancePreference {
-  return value === 'system' || value === 'light' || value === 'dark'
+  return value === 'system' || value === 'light' || value === 'dark' || value === 'eink'
 }
 
 // Appearance carries the override too, so native alerts, pickers, the keyboard and WebViews match the app.
@@ -24,12 +24,15 @@ function applyAppearance(): void {
   if (AppState.currentState === 'background') {
     return
   }
-  applyMobileColorScheme(Appearance.getColorScheme() === 'light' ? 'light' : 'dark')
+  applyMobileColorScheme(
+    Appearance.getColorScheme() === 'light' ? 'light' : 'dark',
+    preference === 'eink'
+  )
 }
 
 function adoptPreference(next: MobileAppearancePreference): void {
   preference = next
-  Appearance.setColorScheme(next === 'system' ? 'unspecified' : next)
+  Appearance.setColorScheme(next === 'system' ? 'unspecified' : next === 'eink' ? 'light' : next)
   applyAppearance()
   for (const listener of preferenceListeners) {
     listener()

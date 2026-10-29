@@ -12,7 +12,7 @@ import Animated, {
   Extrapolation
 } from 'react-native-reanimated'
 import { useBackClaim } from '../navigation/use-back-claim'
-import { colors, spacing } from '../theme/mobile-theme'
+import { colors, isEinkTheme, spacing } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 // Reuse BottomDrawer’s anchor-independent mount-before-commit gate.
@@ -220,7 +220,8 @@ const styles = themedStyleSheet(() => ({
     borderTopLeftRadius: 16,
     borderBottomLeftRadius: 16,
     paddingHorizontal: spacing.md,
-    borderLeftWidth: StyleSheet.hairlineWidth,
+    // E-ink: a solid outline replaces the shadow.
+    borderLeftWidth: isEinkTheme() ? 2 : StyleSheet.hairlineWidth,
     borderLeftColor: colors.borderSubtle,
     ...Platform.select({
       ios: {

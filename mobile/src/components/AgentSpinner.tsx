@@ -3,10 +3,24 @@ import { Animated, View } from 'react-native'
 import type { AgentWorkingMode } from '../../../src/shared/agent-status-types'
 import type { WorktreeStatus } from '../../../src/shared/worktree-status-rollup'
 import { useMobileTranslation } from '../i18n/use-mobile-translation'
-import { colors } from '../theme/mobile-theme'
+import { colors, isEinkTheme } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
+import { agentStatusEinkShapeStyle, type AgentStatusEinkShape } from './agent-status-eink-shapes'
 import { useWorkingRingRotation } from './use-working-ring-rotation'
+
+// Monochrome panels cannot tell yellow from green from red, so e-ink separates states by shape.
+const EINK_SHAPES: Record<WorktreeStatus, AgentStatusEinkShape> = {
+  working: 'ring-open',
+  monitoring: 'ring-open',
+  active: 'filled',
+  done: 'filled',
+  permission: 'square',
+  failed: 'square',
+  interrupted: 'ring-dotted',
+  unconfirmed: 'ring-thick',
+  inactive: 'ring'
+}
 
 // Match desktop sidebar StatusIndicator colors/sizes for the worktree rollup; palette distinguishes moving/alive/completed states.
 const statusColors = (): Record<WorktreeStatus, string> => ({
@@ -36,6 +50,7 @@ export function AgentSpinner({
 
   const palette = statusColors()
   const color = palette[status] ?? palette.inactive
+  const eink = isEinkTheme()
 
   if (monitoring) {
     return (
@@ -43,7 +58,15 @@ export function AgentSpinner({
         style={styles.wrapper}
         accessibilityLabel={t('components.agentSpinner.monitoring', 'Monitoring background tasks')}
       >
-        <Activity size={12} color={palette.working} />
+        <Activity size={12} color={eink ? colors.textPrimary : palette.working} />
+      </View>
+    )
+  }
+
+  if (eink) {
+    return (
+      <View style={styles.wrapper}>
+        <View style={agentStatusEinkShapeStyle(EINK_SHAPES[status] ?? 'ring', 8)} />
       </View>
     )
   }

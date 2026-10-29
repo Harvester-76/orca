@@ -4,7 +4,7 @@ import {
   getHostContextLabel,
   type HostContextLabelSources
 } from '../../../src/shared/worktree/host-context-labels'
-import { colors } from './mobile-tasks-dependencies'
+import { colors, einkSafeColor } from '../theme/mobile-theme'
 import { taskTime } from './mobile-tasks-item-mapping'
 import type { TaskItem } from './mobile-tasks-project-workspace-types'
 import type { RepoSummary } from './mobile-tasks-provider-detail-types'
@@ -24,7 +24,7 @@ export function repoColor(name: string): string {
   for (let i = 0; i < name.length; i += 1) {
     hash = (hash * 31 + name.charCodeAt(i)) | 0
   }
-  return palette[Math.abs(hash) % palette.length]!
+  return einkSafeColor(palette[Math.abs(hash) % palette.length]!)
 }
 
 // Name hosts only for mixed-source lists; SSH repos retain bare paths because no target labels are available here.
@@ -40,7 +40,7 @@ export function getTaskRepoDetail(
 }
 
 export function getRepoBadgeColor(repo: RepoSummary | undefined): string {
-  return resolveRepoBadgeColor(repo?.badgeColor)
+  return einkSafeColor(resolveRepoBadgeColor(repo?.badgeColor))
 }
 
 export function setupSourceLabel(source: string | null | undefined): string {

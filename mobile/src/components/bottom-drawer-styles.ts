@@ -1,5 +1,5 @@
 import { Platform, StyleSheet } from 'react-native'
-import { colors, spacing } from '../theme/mobile-theme'
+import { colors, isEinkTheme, spacing } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 
 export const bottomDrawerStyles = themedStyleSheet(() => ({
@@ -29,6 +29,15 @@ export const bottomDrawerStyles = themedStyleSheet(() => ({
     borderTopLeftRadius: 16,
     borderTopRightRadius: 16,
     paddingHorizontal: spacing.md,
+    // E-ink has no shadow or dimmed edge to separate the sheet, so it gets a solid outline.
+    ...(isEinkTheme()
+      ? {
+          borderTopWidth: 2,
+          borderLeftWidth: 2,
+          borderRightWidth: 2,
+          borderColor: colors.borderSubtle
+        }
+      : null),
     ...Platform.select({
       ios: {
         shadowColor: '#000',

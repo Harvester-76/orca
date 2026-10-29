@@ -35,7 +35,7 @@ import type {
   NativeChatToolCallBlock
 } from '../../../../../src/shared/native-chat-types'
 import { buildNativeChatTaskListRows } from '../../../../../src/shared/native-chat/input/native-chat-task-list-history'
-import { colors } from '../../../theme/mobile-theme'
+import { colors, isEinkTheme } from '../../../theme/mobile-theme'
 import { useMobileColorScheme } from '../../../theme/use-mobile-color-scheme'
 import { MobileNativeChatToolGlyph } from './MobileNativeChatToolIcon'
 import { MobileNativeChatToolLine } from './MobileNativeChatToolLine'
@@ -71,7 +71,8 @@ function PulsingText({
 }): React.JSX.Element {
   const opacity = useRef(new Animated.Value(1)).current
   useEffect(() => {
-    if (!pulsing) {
+    // E-ink: every pulse frame is a full-panel refresh.
+    if (!pulsing || isEinkTheme()) {
       opacity.setValue(1)
       return
     }

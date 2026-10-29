@@ -18,7 +18,8 @@ function appearanceOptions(t: Translate): { value: MobileAppearancePreference; l
   return [
     { value: 'system', label: t('settings.appearance.theme.system', 'System') },
     { value: 'light', label: t('settings.appearance.theme.light', 'Light') },
-    { value: 'dark', label: t('settings.appearance.theme.dark', 'Dark') }
+    { value: 'dark', label: t('settings.appearance.theme.dark', 'Dark') },
+    { value: 'eink', label: t('settings.appearance.theme.eink', 'E-ink') }
   ]
 }
 

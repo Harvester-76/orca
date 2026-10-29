@@ -3,7 +3,7 @@ import { Bell, ChevronDown, ChevronRight, GitBranch, GitPullRequest } from 'luci
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import type { MobileRenderableRepoIcon } from '../host-screen/host-screen-reply-schema'
 import { triggerMediumImpact } from '../platform/haptics'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkSafeColor, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 import { useMobileTranslation } from '../i18n/use-mobile-translation'
@@ -130,7 +130,7 @@ function WorktreeListRowComponent({
                 repo: item.repo
               })}
             >
-              <MobileRepoIcon repoIcon={repoIcon} size={11} color={repoColor} />
+              <MobileRepoIcon repoIcon={repoIcon} size={11} color={einkSafeColor(repoColor)} />
             </View>
           )}
           <Text
@@ -194,7 +194,7 @@ function WorktreeListRowComponent({
             {/* Show repo identity only outside grouping/title-chip cases; Folder fallback matches desktop. */}
             {showRepoInMetaRow && (
               <>
-                <MobileRepoIcon repoIcon={repoIcon} size={11} color={repoColor} />
+                <MobileRepoIcon repoIcon={repoIcon} size={11} color={einkSafeColor(repoColor)} />
                 <Text style={styles.repoName} numberOfLines={1}>
                   {item.repo}
                 </Text>

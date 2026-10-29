@@ -16,6 +16,9 @@ import { routeTerminalQueryReply } from './terminal-webview-query-reply-routing'
 import { useTerminalWebViewReadyPromises } from './terminal-webview-ready-promises'
 import { createTerminalWriteCoalescer } from './terminal-write-coalescer'
 import { isTerminalGestureInput } from './terminal-gesture-input'
+import { resolveEinkTerminalTheme } from './terminal-eink-theme-override'
+import { isEinkTheme } from '../theme/mobile-theme'
+import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 
 // Share readiness, queues, coalescing and imperative handles across hosts; only document command/notify transport differs.
 
@@ -30,7 +33,7 @@ export function useTerminalWebViewController(
   transport: TerminalWebViewTransport
 ) {
   const {
-    terminalTheme,
+    terminalTheme: hostTerminalTheme,
     interactionActive = true,
     textScale = 1,
     onWebReady,
@@ -51,6 +54,12 @@ export function useTerminalWebViewController(
     onCellBoxChange
   } = props
   const { pingsOnForegroundRecovery, post } = transport
+  useMobileColorScheme()
+  const einkActive = isEinkTheme()
+  const terminalTheme = useMemo(
+    () => resolveEinkTerminalTheme(hostTerminalTheme, einkActive),
+    [hostTerminalTheme, einkActive]
+  )
   const isWebReadyRef = useRef(false)
   const pendingMessages = useMemo(() => createTerminalWebViewPendingMessages(), [])
   const messageIdRef = useRef(0)

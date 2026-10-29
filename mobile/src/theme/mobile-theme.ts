@@ -120,6 +120,58 @@ const lightColors: MobilePalette = {
   terminalBg: '#1a1b26'
 }
 
+// E-ink panels: black on white, no tints or alpha, and syntax roles that differ by luminance.
+export const einkPalette: MobilePalette = {
+  bgBase: '#ffffff',
+  bgPanel: '#ffffff',
+  bgRaised: '#eeeeee',
+  borderSubtle: '#000000',
+  editorSurface: '#ffffff',
+  composerSurface: '#ffffff',
+  composerBorder: '#000000',
+  composerControl: '#eeeeee',
+  skillToken: '#000000',
+  skillTokenSurface: '#e0e0e0',
+  chatUserSurface: '#eeeeee',
+  chatUserBorder: '#000000',
+  chatForegroundStrong: '#000000',
+
+  textPrimary: '#000000',
+  textSecondary: '#222222',
+  textMuted: '#444444',
+
+  surfaceBright: '#000000',
+
+  accentBlue: '#000000',
+  onAccent: '#ffffff',
+
+  statusGreen: '#000000',
+  statusAmber: '#000000',
+  statusRed: '#000000',
+  mergeGreen: '#000000',
+  onMergeGreen: '#ffffff',
+  statusPurple: '#000000',
+  gitDecorationAdded: '#000000',
+  gitDecorationDeleted: '#000000',
+  diffAddedBg: '#e0e0e0',
+  diffDeletedBg: '#f5f5f5',
+  diffAddedGutter: '#c8c8c8',
+  diffDeletedGutter: '#e6e6e6',
+  chatDiffAdded: '#000000',
+  chatDiffRemoved: '#000000',
+
+  syntaxComment: '#555555',
+  syntaxKeyword: '#000000',
+  syntaxString: '#333333',
+  syntaxNumber: '#222222',
+  syntaxType: '#111111',
+  syntaxFunction: '#000000',
+  syntaxVariable: '#222222',
+  syntaxMeta: '#444444',
+
+  terminalBg: '#ffffff'
+}
+
 const palettes: Record<MobileColorScheme, MobilePalette> = { dark: darkColors, light: lightColors }
 
 export function paletteForScheme(scheme: MobileColorScheme): MobilePalette {
@@ -130,18 +182,36 @@ export function paletteForScheme(scheme: MobileColorScheme): MobilePalette {
 export const colors: MobilePalette = { ...darkColors }
 
 let currentScheme: MobileColorScheme = 'dark'
+// E-ink is a light scheme with its own palette, so web content and native widgets treat it as light.
+let einkActive = false
 const schemeListeners = new Set<() => void>()
 
 export function getMobileColorScheme(): MobileColorScheme {
   return currentScheme
 }
 
-export function applyMobileColorScheme(scheme: MobileColorScheme): void {
-  if (scheme === currentScheme) {
+export type MobileThemeKey = MobileColorScheme | 'eink'
+
+export function getMobileThemeKey(): MobileThemeKey {
+  return einkActive ? 'eink' : currentScheme
+}
+
+export function isEinkTheme(): boolean {
+  return einkActive
+}
+
+// Brand and badge hues carry no meaning on a monochrome panel, so they render as plain ink there.
+export function einkSafeColor(color: string): string {
+  return einkActive ? colors.textPrimary : color
+}
+
+export function applyMobileColorScheme(scheme: MobileColorScheme, eink = false): void {
+  if (scheme === currentScheme && eink === einkActive) {
     return
   }
   currentScheme = scheme
-  Object.assign(colors, palettes[scheme])
+  einkActive = eink
+  Object.assign(colors, eink ? einkPalette : palettes[scheme])
   for (const listener of schemeListeners) {
     listener()
   }
