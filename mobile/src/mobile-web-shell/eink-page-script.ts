@@ -50,7 +50,11 @@ const PAGE_SCRIPT = String.raw`(function(){
    return;
   }
   if(bg.a>0.05){
-   if(sat(bg)>0.2) set(el,'background-color','#000');
+   if(sat(bg)>0.2){
+    set(el,'background-color','#000');
+    // Red marks attention or failure: a square keeps it apart from the round "done" dot.
+    if(small&&bg.r>bg.g+80&&bg.r>bg.b+80) set(el,'border-radius','0');
+   }
    else if(small&&lum(bg)>0.2&&lum(bg)<0.95){
     set(el,'background-color','transparent');
     outline(el,2);
