@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, isEinkTheme, radii, spacing, typography } from '../theme/mobile-theme'
 
 export const TEXT_SIZE = 17
 export const MONO_SIZE = 12
@@ -16,15 +16,17 @@ export const styles = StyleSheet.create({
     maxWidth: '100%',
     gap: spacing.sm
   },
+  // E-ink: your own message is ink on paper inside an outline, like the desktop page, not a black slab.
   userBubble: {
     maxWidth: '88%',
-    backgroundColor: colors.textPrimary,
+    backgroundColor: isEinkTheme() ? colors.bgBase : colors.textPrimary,
+    ...(isEinkTheme() ? { borderWidth: einkBorderWidth(1), borderColor: colors.textPrimary } : null),
     borderRadius: radii.card,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm
   },
   userText: {
-    color: colors.bgBase,
+    color: isEinkTheme() ? colors.textPrimary : colors.bgBase,
     fontSize: TEXT_SIZE,
     lineHeight: TEXT_SIZE + 6,
     fontWeight: '500'
