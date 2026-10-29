@@ -21,7 +21,12 @@ const PAGE_SCRIPT = String.raw`(function(){
  const outline=(el,width)=>{set(el,'border',width+'px solid #000');set(el,'box-sizing','border-box')};
  const wide=()=>innerWidth>=900;
  const hasOwnText=el=>Array.from(el.childNodes).some(n=>n.nodeType===3&&n.textContent.trim());
- const sidebarText=(el,rect)=>wide()&&rect.width>0&&rect.right<=innerWidth*0.42&&hasOwnText(el);
+ const isField=el=>el.tagName==='INPUT'||el.tagName==='TEXTAREA';
+ // The sidebar is read at arm's length in a narrow column, so it grows a little more than the content.
+ const textScale=(el,rect)=>{
+  if(!wide()||rect.width<=0||!(hasOwnText(el)||isField(el))) return 1;
+  return rect.right<=innerWidth*0.42?1.2:1.15;
+ };
  // Lightness of the paper under an element, so ink on a dark fill is drawn white.
  const paper=new WeakMap();
  function paperUnder(el){
@@ -32,13 +37,13 @@ const PAGE_SCRIPT = String.raw`(function(){
   paper.set(el,value);
   return value;
  }
- function scaleText(el,cs){
+ function scaleText(el,cs,scale){
   const fs=parseFloat(cs.fontSize);
   if(el.dataset.einkFs&&Math.abs(fs-parseFloat(el.dataset.einkFs))<0.01) return;
-  const target=fs*1.2;
+  const target=fs*scale;
   set(el,'font-size',target+'px');
   const lh=parseFloat(cs.lineHeight);
-  if(!isNaN(lh)) set(el,'line-height',(lh*1.2)+'px');
+  if(!isNaN(lh)) set(el,'line-height',(lh*scale)+'px');
   el.dataset.einkFs=target;
  }
  function pillPadding(el,rect){
@@ -115,7 +120,8 @@ const PAGE_SCRIPT = String.raw`(function(){
   if(hasOwnText(el)||el.tagName==='INPUT'||el.tagName==='TEXTAREA'||el.tagName.toLowerCase()==='svg'){
    set(el,'color',paper.get(el)<0.45?'#fff':'#000');
   }
-  if(sidebarText(el,rect)) scaleText(el,cs);
+  const scale=textScale(el,rect);
+  if(scale>1) scaleText(el,cs,scale);
   pillPadding(el,rect);
  }
  function walk(n){ if(n.nodeType!==1) return; ink(n); for(const c of n.querySelectorAll('*')) ink(c); }
