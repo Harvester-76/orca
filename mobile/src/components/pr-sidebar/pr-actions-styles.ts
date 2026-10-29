@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../theme/mobile-theme'
 import { themedStyleSheet } from '../../theme/themed-styles'
 
 export const prActionsStyles = themedStyleSheet(() => ({
@@ -25,7 +25,7 @@ export const prActionsStyles = themedStyleSheet(() => ({
     paddingHorizontal: spacing.md,
     borderRadius: radii.button,
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   // Use neutral light/dark primary like desktop so sidebar stays mostly monochrome.
@@ -76,7 +76,7 @@ export const prActionsStyles = themedStyleSheet(() => ({
     justifyContent: 'center',
     paddingHorizontal: spacing.sm,
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },

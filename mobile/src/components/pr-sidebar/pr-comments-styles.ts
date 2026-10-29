@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../theme/mobile-theme'
 import { themedStyleSheet } from '../../theme/themed-styles'
 
 export const prCommentsStyles = themedStyleSheet(() => ({
@@ -9,7 +9,7 @@ export const prCommentsStyles = themedStyleSheet(() => ({
     fontStyle: 'italic'
   },
   countChip: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised,
     borderRadius: 999,
@@ -23,7 +23,7 @@ export const prCommentsStyles = themedStyleSheet(() => ({
   },
   audienceTabs: {
     flexDirection: 'row',
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.row,
     backgroundColor: colors.bgBase,
@@ -57,7 +57,7 @@ export const prCommentsStyles = themedStyleSheet(() => ({
     minHeight: 40,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     backgroundColor: colors.bgPanel
@@ -71,7 +71,7 @@ export const prCommentsStyles = themedStyleSheet(() => ({
     gap: spacing.sm
   },
   card: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     backgroundColor: colors.bgPanel,
@@ -89,7 +89,7 @@ export const prCommentsStyles = themedStyleSheet(() => ({
     gap: spacing.sm,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   avatar: {
@@ -118,7 +118,7 @@ export const prCommentsStyles = themedStyleSheet(() => ({
     flexShrink: 1
   },
   resolvedChip: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised,
     borderRadius: 999,
@@ -152,7 +152,7 @@ export const prCommentsStyles = themedStyleSheet(() => ({
     gap: 4,
     height: 24,
     paddingHorizontal: spacing.sm,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised,
     borderRadius: 999
@@ -167,7 +167,7 @@ export const prCommentsStyles = themedStyleSheet(() => ({
     gap: spacing.sm,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     backgroundColor: colors.bgPanel
@@ -178,7 +178,7 @@ export const prCommentsStyles = themedStyleSheet(() => ({
     flexShrink: 1
   },
   empty: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderStyle: 'dashed',
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
@@ -201,7 +201,7 @@ export const prCommentsStyles = themedStyleSheet(() => ({
     minHeight: 28,
     paddingHorizontal: spacing.sm,
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised
   },

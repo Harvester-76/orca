@@ -6,7 +6,7 @@ import { ActionSheetContent } from '../../../components/ActionSheetModal'
 import { BottomDrawer } from '../../../components/BottomDrawer'
 import { useClipboardWriter } from '../../../platform/clipboard'
 import { useWindowSafeAreaInsets } from '../../../layout/side-safe-area'
-import { colors, spacing, typography } from '../../../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../../../theme/mobile-theme'
 import { themedStyleSheet } from '../../../theme/themed-styles'
 import { useMobileColorScheme } from '../../../theme/use-mobile-color-scheme'
 import { translate } from '../../../i18n/mobile-i18n'
@@ -134,7 +134,7 @@ const styles = themedStyleSheet(() => ({
     justifyContent: 'space-between',
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.md,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   title: { color: colors.textPrimary, fontSize: typography.titleSize, fontWeight: '600' },

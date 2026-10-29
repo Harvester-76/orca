@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 
 export const mobileBrowserPaneStyles = themedStyleSheet(() => ({
@@ -16,7 +16,7 @@ export const mobileBrowserPaneStyles = themedStyleSheet(() => ({
     gap: spacing.xs,
     paddingHorizontal: spacing.sm,
     paddingVertical: 2,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },
@@ -67,7 +67,7 @@ export const mobileBrowserPaneStyles = themedStyleSheet(() => ({
   errorText: {
     color: colors.textPrimary,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     paddingHorizontal: spacing.md,
@@ -88,7 +88,7 @@ export const mobileBrowserPaneStyles = themedStyleSheet(() => ({
     width: '100%',
     maxWidth: 360,
     borderRadius: radii.card,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel,
     padding: spacing.lg
@@ -143,7 +143,7 @@ export const mobileBrowserPaneStyles = themedStyleSheet(() => ({
   },
   keyboardDock: {
     zIndex: 20,
-    borderTopWidth: 1,
+    borderTopWidth: einkBorderWidth(1),
     borderTopColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },

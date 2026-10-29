@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 
 export const diffStyles = themedStyleSheet(() => ({
@@ -38,7 +38,7 @@ export const diffStyles = themedStyleSheet(() => ({
     alignItems: 'center',
     gap: spacing.md,
     paddingBottom: spacing.md,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   diffDrawerTitleBlock: {

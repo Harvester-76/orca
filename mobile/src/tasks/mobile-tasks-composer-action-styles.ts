@@ -6,6 +6,7 @@ import {
   spacing,
   typography
 } from './mobile-tasks-dependencies'
+import { einkBorderWidth } from '../theme/mobile-theme'
 
 export const mobileTasksComposerActionStyles = themedStyleSheet(() => ({
   createForm: {
@@ -43,7 +44,7 @@ export const mobileTasksComposerActionStyles = themedStyleSheet(() => ({
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing.sm,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel,
     borderRadius: radii.input,
@@ -56,7 +57,7 @@ export const mobileTasksComposerActionStyles = themedStyleSheet(() => ({
     fontSize: typography.bodySize
   },
   issueSourceBox: {
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     backgroundColor: colors.bgPanel,
@@ -69,7 +70,7 @@ export const mobileTasksComposerActionStyles = themedStyleSheet(() => ({
   },
   issueSourceSegment: {
     flexDirection: 'row',
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.input,
     backgroundColor: colors.bgBase,
@@ -103,7 +104,7 @@ export const mobileTasksComposerActionStyles = themedStyleSheet(() => ({
     alignItems: 'center'
   },
   input: {
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel,
     borderRadius: radii.input,
@@ -160,7 +161,7 @@ export const mobileTasksComposerActionStyles = themedStyleSheet(() => ({
     alignSelf: 'flex-start',
     marginTop: spacing.sm,
     borderRadius: radii.button,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.xs
@@ -168,7 +169,7 @@ export const mobileTasksComposerActionStyles = themedStyleSheet(() => ({
   inlineSaveButtonCompact: {
     alignSelf: 'flex-start',
     borderRadius: radii.button,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.xs
@@ -195,7 +196,7 @@ export const mobileTasksComposerActionStyles = themedStyleSheet(() => ({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: radii.button,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     paddingVertical: spacing.sm
   },

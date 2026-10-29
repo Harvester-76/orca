@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../theme/mobile-theme'
 import { themedStyleSheet } from '../../theme/themed-styles'
 
 export const prAiTriageStyles = themedStyleSheet(() => ({
@@ -13,7 +13,7 @@ export const prAiTriageStyles = themedStyleSheet(() => ({
     gap: spacing.sm,
     padding: spacing.sm,
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.statusRed,
     backgroundColor: colors.diffDeletedBg
   },
@@ -37,7 +37,7 @@ export const prAiTriageStyles = themedStyleSheet(() => ({
     gap: spacing.xs,
     paddingHorizontal: spacing.sm,
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised
   },
@@ -54,7 +54,7 @@ export const prAiTriageStyles = themedStyleSheet(() => ({
     gap: spacing.xs,
     paddingHorizontal: spacing.md,
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised
   },

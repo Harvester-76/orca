@@ -1,4 +1,5 @@
 import { themedStyleSheet, colors, radii, spacing } from './mobile-tasks-dependencies'
+import { einkBorderWidth } from '../theme/mobile-theme'
 
 export const mobileTasksListStyles = themedStyleSheet(() => ({
   taskRow: {
@@ -87,7 +88,7 @@ export const mobileTasksListStyles = themedStyleSheet(() => ({
   },
   prSignalChip: {
     alignSelf: 'flex-start',
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     backgroundColor: colors.bgPanel,
@@ -114,7 +115,7 @@ export const mobileTasksListStyles = themedStyleSheet(() => ({
     borderRadius: 999,
     paddingHorizontal: spacing.sm,
     paddingVertical: 3,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   statusPillSelf: {
@@ -123,7 +124,7 @@ export const mobileTasksListStyles = themedStyleSheet(() => ({
     borderRadius: 999,
     paddingHorizontal: spacing.sm,
     paddingVertical: 3,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     marginTop: spacing.sm
   },
@@ -167,7 +168,7 @@ export const mobileTasksListStyles = themedStyleSheet(() => ({
     minHeight: 38,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     backgroundColor: colors.bgRaised,

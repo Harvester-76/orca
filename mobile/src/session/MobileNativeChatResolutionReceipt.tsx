@@ -8,7 +8,7 @@ import {
 import { nativeChatReceiptCopy } from './native-chat-receipt-copy'
 import { useMobileTranslation } from '../i18n/use-mobile-translation'
 import { INLINE_TEXT_SELECTION } from '../components/inline-text-selection'
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../theme/mobile-theme'
 import { MobileNativeChatAwaitingInputRow } from './native-chat/transcript/MobileNativeChatAwaitingInputRow'
 import { scaledType } from './native-chat/transcript/mobile-native-chat-message-styles'
 import { MobileNativeChatMessageTime } from './native-chat/transcript/MobileNativeChatMessageTime'
@@ -92,7 +92,7 @@ const styles = themedStyleSheet(() => ({
   receipt: {
     gap: spacing.xs,
     paddingLeft: spacing.md,
-    borderLeftWidth: StyleSheet.hairlineWidth,
+    borderLeftWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderLeftColor: colors.borderSubtle
   },
   text: {

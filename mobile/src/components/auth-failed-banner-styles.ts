@@ -1,4 +1,4 @@
-import { colors, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 
 /** Shared with `AuthFailedBannerActions`, a sibling file so that the page can offer Re-pair alone. */
@@ -7,7 +7,7 @@ export const authFailedBannerStyles = themedStyleSheet(() => ({
     backgroundColor: colors.bgPanel,
     paddingVertical: spacing.sm,
     paddingHorizontal: spacing.lg,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   text: {

@@ -19,7 +19,7 @@ import {
 } from '../../mobile-native-chat-notice-context'
 import { MobileMarkdown } from '../../../components/MobileMarkdown'
 import { INLINE_TEXT_SELECTION } from '../../../components/inline-text-selection'
-import { colors, radii, spacing, typography } from '../../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../../theme/mobile-theme'
 import { themedStyleSheet } from '../../../theme/themed-styles'
 import { useMobileColorScheme } from '../../../theme/use-mobile-color-scheme'
 import { nativeChatHostStatusCopy, nativeChatNoticeCopy } from './native-chat-notice-copy'
@@ -177,7 +177,7 @@ const styles = themedStyleSheet(() => ({
   },
   rule: {
     flex: 1,
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle
   },
   dividerLabel: {
@@ -192,7 +192,7 @@ const styles = themedStyleSheet(() => ({
     fontFamily: typography.monoFamily
   },
   card: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.row,
     backgroundColor: colors.bgPanel,

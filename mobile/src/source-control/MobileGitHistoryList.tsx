@@ -1,7 +1,7 @@
 import { memo, useCallback, useEffect, useMemo, useState } from 'react'
 import { ActivityIndicator, FlatList, Pressable, Text, View } from 'react-native'
 import { ChevronDown, ChevronRight } from 'lucide-react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 import { translate } from '../i18n/mobile-i18n'
@@ -301,7 +301,7 @@ const styles = themedStyleSheet(() => ({
     backgroundColor: colors.bgRaised
   },
   retryText: { color: colors.textPrimary, fontSize: typography.bodySize, fontWeight: '600' },
-  commit: { borderBottomWidth: 1, borderBottomColor: colors.borderSubtle },
+  commit: { borderBottomWidth: einkBorderWidth(1), borderBottomColor: colors.borderSubtle },
   commitHeader: {
     flexDirection: 'row',
     alignItems: 'center',

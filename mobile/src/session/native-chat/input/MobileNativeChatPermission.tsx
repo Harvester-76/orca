@@ -4,7 +4,7 @@ import { ShieldQuestion } from 'lucide-react-native'
 import { approvalBlockedPathToShow } from '../../../../../src/shared/agent-session-approval-blocked-path'
 import { MobileNativeChatCardHeaderAction } from '../../MobileNativeChatCardHeaderAction'
 import { MobileMarkdown } from '../../../components/MobileMarkdown'
-import { colors, radii, spacing, typography } from '../../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../../theme/mobile-theme'
 import { themedStyleSheet } from '../../../theme/themed-styles'
 import { useMobileColorScheme } from '../../../theme/use-mobile-color-scheme'
 import { useMobileTranslation } from '../../../i18n/use-mobile-translation'
@@ -163,7 +163,7 @@ const styles = themedStyleSheet(() => ({
     padding: spacing.md,
     gap: spacing.sm,
     borderRadius: radii.card,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel,
     flexShrink: 1,
@@ -223,7 +223,7 @@ const styles = themedStyleSheet(() => ({
   },
   optionSecondary: {
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   optionPressed: {

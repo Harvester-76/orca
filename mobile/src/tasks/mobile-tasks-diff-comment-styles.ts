@@ -6,6 +6,7 @@ import {
   spacing,
   typography
 } from './mobile-tasks-dependencies'
+import { einkBorderWidth } from '../theme/mobile-theme'
 
 export const mobileTasksDiffCommentStyles = themedStyleSheet(() => ({
   filePreview: {
@@ -13,13 +14,13 @@ export const mobileTasksDiffCommentStyles = themedStyleSheet(() => ({
     marginTop: spacing.xs
   },
   fileDiff: {
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.row,
     overflow: 'hidden'
   },
   diffLineBlock: {
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle,
     borderLeftWidth: 2,
     borderLeftColor: colors.borderSubtle,
@@ -64,7 +65,7 @@ export const mobileTasksDiffCommentStyles = themedStyleSheet(() => ({
     color: colors.textSecondary
   },
   commentBlock: {
-    borderTopWidth: 1,
+    borderTopWidth: einkBorderWidth(1),
     borderTopColor: colors.borderSubtle,
     paddingTop: spacing.sm
   },
@@ -74,7 +75,7 @@ export const mobileTasksDiffCommentStyles = themedStyleSheet(() => ({
   commentReplyBlock: {
     marginLeft: spacing.md,
     paddingLeft: spacing.sm,
-    borderLeftWidth: 1,
+    borderLeftWidth: einkBorderWidth(1),
     borderLeftColor: colors.borderSubtle
   },
   commentResolvedBlock: {
@@ -84,7 +85,7 @@ export const mobileTasksDiffCommentStyles = themedStyleSheet(() => ({
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing.sm,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     backgroundColor: colors.bgPanel,
@@ -119,7 +120,7 @@ export const mobileTasksDiffCommentStyles = themedStyleSheet(() => ({
     marginTop: spacing.xs
   },
   reactionChip: {
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised,
     borderRadius: 999,
@@ -149,14 +150,14 @@ export const mobileTasksDiffCommentStyles = themedStyleSheet(() => ({
     color: colors.textPrimary
   },
   actionSeparator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginHorizontal: spacing.md
   },
   setupPromptBox: {
     backgroundColor: colors.bgPanel,
     borderRadius: 12,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     padding: spacing.md,
     marginBottom: spacing.md,

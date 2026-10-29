@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 
 export const hubStyles = themedStyleSheet(() => ({
@@ -8,7 +8,7 @@ export const hubStyles = themedStyleSheet(() => ({
     alignItems: 'stretch',
     width: '100%',
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   segment: {
@@ -41,7 +41,7 @@ export const hubStyles = themedStyleSheet(() => ({
     gap: spacing.sm,
     marginTop: spacing.md,
     paddingTop: spacing.md,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle
   },
   chipPressed: {
@@ -60,7 +60,7 @@ export const hubStyles = themedStyleSheet(() => ({
     paddingHorizontal: spacing.sm,
     paddingVertical: 1,
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth)
   },
   statePillText: {
     fontSize: typography.metaSize,

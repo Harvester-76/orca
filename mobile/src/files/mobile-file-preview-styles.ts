@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 
 export const filePreviewStyles = themedStyleSheet(() => ({
@@ -9,7 +9,7 @@ export const filePreviewStyles = themedStyleSheet(() => ({
   },
   header: {
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   topBar: {
@@ -99,7 +99,7 @@ export const filePreviewStyles = themedStyleSheet(() => ({
     marginHorizontal: spacing.md,
     marginVertical: spacing.sm,
     padding: 1,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     backgroundColor: colors.bgPanel

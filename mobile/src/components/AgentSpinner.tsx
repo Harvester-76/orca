@@ -3,7 +3,7 @@ import { Animated, View } from 'react-native'
 import type { AgentWorkingMode } from '../../../src/shared/agent-status-types'
 import type { WorktreeStatus } from '../../../src/shared/worktree-status-rollup'
 import { useMobileTranslation } from '../i18n/use-mobile-translation'
-import { colors, isEinkTheme } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, isEinkTheme } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 import { agentStatusEinkShapeStyle, type AgentStatusEinkShape } from './agent-status-eink-shapes'
@@ -114,7 +114,7 @@ const styles = themedStyleSheet(() => ({
     width: 8,
     height: 8,
     borderRadius: 4,
-    borderWidth: 1.5,
+    borderWidth: einkBorderWidth(1.5),
     borderStyle: 'dashed',
     borderColor: statusColors().unconfirmed
   },

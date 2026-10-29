@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
 
@@ -13,7 +13,7 @@ export const mobileDiffReviewControlStyles = themedStyleSheet(() => ({
     paddingTop: spacing.sm,
     gap: spacing.sm,
     backgroundColor: colors.bgBase,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle
   },
   fileActionRow: {
@@ -114,7 +114,7 @@ export const mobileDiffReviewControlStyles = themedStyleSheet(() => ({
   composerInput: {
     minHeight: 112,
     borderRadius: radii.input,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel,
     color: colors.textPrimary,

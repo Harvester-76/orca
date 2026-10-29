@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { View, PanResponder, Platform } from 'react-native'
 import { useGlobalSearchParams, usePathname } from 'expo-router'
-import { colors } from '../../src/theme/mobile-theme'
+import { colors, einkBorderWidth } from '../../src/theme/mobile-theme'
 import { themedStyleSheet } from '../../src/theme/themed-styles'
 import { useMobileColorScheme } from '../../src/theme/use-mobile-color-scheme'
 import { useResponsiveLayout } from '../../src/layout/responsive-layout'
@@ -158,7 +158,7 @@ const styles = themedStyleSheet(() => ({
     backgroundColor: 'transparent'
   },
   sidebar: {
-    borderRightWidth: 1,
+    borderRightWidth: einkBorderWidth(1),
     borderRightColor: colors.borderSubtle
   },
   // Elevated edge strip must sit above list to own Android drags.

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../theme/mobile-theme'
 import { themedStyleSheet } from '../../theme/themed-styles'
 import { TEXT_INPUT_FONT_SIZE } from '../../platform/text-input-font-size'
 
@@ -11,7 +11,7 @@ export const prCommentComposerStyles = themedStyleSheet(() => ({
   input: {
     minHeight: 64,
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.input,
     paddingHorizontal: spacing.md,

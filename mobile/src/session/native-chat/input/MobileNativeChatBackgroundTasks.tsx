@@ -34,7 +34,7 @@ import {
 } from '../../../../../src/shared/background-task-roster'
 import { AGENT_WORKING_COLOR, AgentStateDot } from '../../../components/AgentStateDot'
 import { useNow } from '../../../hooks/use-now'
-import { colors, radii, spacing, typography } from '../../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../../theme/mobile-theme'
 import { themedStyleSheet } from '../../../theme/themed-styles'
 import { useMobileColorScheme } from '../../../theme/use-mobile-color-scheme'
 import type { MobileStructuredBackgroundTasks } from '../../use-mobile-structured-background-tasks'
@@ -277,7 +277,7 @@ const styles = themedStyleSheet(() => ({
   box: {
     backgroundColor: colors.bgPanel,
     borderRadius: radii.row,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     overflow: 'hidden'
   },
@@ -327,7 +327,7 @@ const styles = themedStyleSheet(() => ({
   },
   body: {
     maxHeight: 220,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle
   },
   group: {

@@ -1,5 +1,5 @@
 import { Platform, StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../../theme/mobile-theme'
 import { MONO_SIZE, scaledType } from './mobile-native-chat-message-styles'
 import { themedStyleSheet } from '../../../theme/themed-styles'
 
@@ -44,7 +44,7 @@ export const toolStyles = themedStyleSheet(() => ({
     marginLeft: 7,
     marginTop: 2,
     paddingLeft: 13,
-    borderLeftWidth: StyleSheet.hairlineWidth,
+    borderLeftWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderLeftColor: colors.borderSubtle
   },
   line: {
@@ -93,7 +93,7 @@ export const toolStyles = themedStyleSheet(() => ({
   },
   codeBox: {
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel,
     padding: spacing.sm
@@ -238,8 +238,8 @@ export const toolStyles = themedStyleSheet(() => ({
   diffGap: {
     textAlign: 'center',
     color: colors.textMuted,
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   }
 }))

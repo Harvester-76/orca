@@ -1,6 +1,6 @@
 import { memo, useEffect, useId, useRef, useState, type ReactNode } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import { colors, radii, spacing, typography } from '../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../theme/mobile-theme'
 import { useMobileColorScheme } from '../../theme/use-mobile-color-scheme'
 import { themedStyleSheet } from '../../theme/themed-styles'
 import { readableMermaidFlowchartSvg } from '../../../../src/shared/mermaid-flowchart-contrast'
@@ -93,7 +93,7 @@ function MermaidFrame({ children }: { children: ReactNode }) {
 // No rule reaches the SVG: mermaid emits it with `width="100%"` and its own natural `max-width`.
 const styles = themedStyleSheet(() => ({
   frame: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.row,
     marginBottom: spacing.sm,
@@ -103,7 +103,7 @@ const styles = themedStyleSheet(() => ({
   label: {
     paddingHorizontal: spacing.sm,
     paddingVertical: 2,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },

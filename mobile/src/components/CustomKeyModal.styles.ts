@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, getMobileColorScheme, spacing, radii, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, getMobileColorScheme, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
 
@@ -14,7 +14,7 @@ export const customKeyModalStyles = themedStyleSheet(() => ({
     height: 56,
     borderRadius: 10,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     color: colors.textPrimary,
     fontFamily: typography.monoFamily,
@@ -49,7 +49,7 @@ export const customKeyModalStyles = themedStyleSheet(() => ({
     overflow: 'hidden'
   },
   separator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginHorizontal: spacing.md
   },
@@ -96,7 +96,7 @@ export const customKeyModalStyles = themedStyleSheet(() => ({
     paddingHorizontal: spacing.md,
     borderRadius: 10,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     alignItems: 'center',
     justifyContent: 'center'
@@ -245,7 +245,7 @@ export const customKeyModalStyles = themedStyleSheet(() => ({
     paddingVertical: spacing.sm,
     fontSize: TEXT_INPUT_FONT_SIZE,
     fontFamily: typography.monoFamily,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   switchRow: {

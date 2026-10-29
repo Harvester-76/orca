@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { ChevronUp } from 'lucide-react-native'
-import { colors, spacing, typography } from '../../../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../../../theme/mobile-theme'
 import { themedStyleSheet } from '../../../theme/themed-styles'
 import { useMobileColorScheme } from '../../../theme/use-mobile-color-scheme'
 import { useMobileTranslation } from '../../../i18n/use-mobile-translation'
@@ -42,7 +42,7 @@ const styles = themedStyleSheet(() => ({
     paddingRight: spacing.sm,
     paddingVertical: spacing.xs,
     backgroundColor: colors.bgPanel,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle
   },
   title: { flex: 1, color: colors.textPrimary, fontSize: typography.bodySize, fontWeight: '600' }

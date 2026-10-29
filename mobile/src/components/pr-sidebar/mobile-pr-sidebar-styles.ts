@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../theme/mobile-theme'
 import { themedStyleSheet } from '../../theme/themed-styles'
 import { TEXT_INPUT_FONT_SIZE } from '../../platform/text-input-font-size'
 
@@ -10,7 +10,7 @@ export const mobilePrSidebarStyles = themedStyleSheet(() => ({
   dockColumn: {
     width: PR_SIDEBAR_DOCK_WIDTH,
     backgroundColor: colors.bgPanel,
-    borderLeftWidth: StyleSheet.hairlineWidth,
+    borderLeftWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderLeftColor: colors.borderSubtle
   },
   // Diff/sidebar scroll independently; flat desktop-style sections use bottom dividers without outer padding/gaps.
@@ -20,7 +20,7 @@ export const mobilePrSidebarStyles = themedStyleSheet(() => ({
   // Use full-bleed panel bands separated by hairlines; header keeps title/body divider.
   section: {
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   // Match desktop section header’s title/trailing control and hairline body divider.
@@ -32,7 +32,7 @@ export const mobilePrSidebarStyles = themedStyleSheet(() => ({
     gap: spacing.sm,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   sectionHeaderTrailing: {
@@ -71,7 +71,7 @@ export const mobilePrSidebarStyles = themedStyleSheet(() => ({
     paddingHorizontal: spacing.sm,
     paddingVertical: 2,
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.bgRaised
   },
   badgeText: {
@@ -176,7 +176,7 @@ export const mobilePrSidebarStyles = themedStyleSheet(() => ({
   },
   // Keep annotation/jobs detail muted below hairline summary divider.
   checkDetailGroup: {
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle,
     paddingTop: spacing.sm,
     gap: spacing.xs
@@ -275,7 +275,7 @@ export const mobilePrSidebarStyles = themedStyleSheet(() => ({
   pickerSearch: {
     minHeight: 40,
     borderRadius: radii.input,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel,
     color: colors.textPrimary,

@@ -1,4 +1,5 @@
 import { themedStyleSheet, colors, radii, spacing, typography } from './mobile-tasks-dependencies'
+import { einkBorderWidth } from '../theme/mobile-theme'
 
 export const mobileTasksWorkspaceReviewStyles = themedStyleSheet(() => ({
   workspaceCreateForm: {
@@ -41,7 +42,7 @@ export const mobileTasksWorkspaceReviewStyles = themedStyleSheet(() => ({
   sshConnectCard: {
     backgroundColor: colors.bgRaised,
     borderRadius: radii.input,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
@@ -79,7 +80,7 @@ export const mobileTasksWorkspaceReviewStyles = themedStyleSheet(() => ({
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing.sm,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     paddingHorizontal: spacing.sm,
@@ -117,7 +118,7 @@ export const mobileTasksWorkspaceReviewStyles = themedStyleSheet(() => ({
     color: colors.textSecondary
   },
   projectFieldCard: {
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     padding: spacing.sm,
@@ -156,7 +157,7 @@ export const mobileTasksWorkspaceReviewStyles = themedStyleSheet(() => ({
     paddingVertical: 2
   },
   fileCard: {
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     padding: spacing.sm,
@@ -164,7 +165,7 @@ export const mobileTasksWorkspaceReviewStyles = themedStyleSheet(() => ({
   },
   pipelineStatusChip: {
     flexShrink: 0,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: 999,
     backgroundColor: colors.bgRaised,

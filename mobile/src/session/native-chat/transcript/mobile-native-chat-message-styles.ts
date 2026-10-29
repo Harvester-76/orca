@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../../theme/mobile-theme'
 import { themedStyleSheet } from '../../../theme/themed-styles'
 
 export const TEXT_SIZE = 17
@@ -26,7 +26,7 @@ export const styles = themedStyleSheet(() => ({
   userBubble: {
     maxWidth: '88%',
     backgroundColor: colors.chatUserSurface,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.chatUserBorder,
     borderRadius: radii.card,
     paddingHorizontal: spacing.md,
@@ -99,7 +99,7 @@ export const styles = themedStyleSheet(() => ({
     height: 150,
     borderRadius: radii.card,
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   }
 }))

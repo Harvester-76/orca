@@ -17,7 +17,7 @@ import {
   Quote,
   Strikethrough
 } from 'lucide-react-native'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing } from '../theme/mobile-theme'
 import type { Translate } from '../i18n/mobile-i18n'
 import { useMobileTranslation } from '../i18n/use-mobile-translation'
 import { themedStyleSheet } from '../theme/themed-styles'
@@ -156,7 +156,7 @@ export const MobileRichMarkdownToolbar = memo(function MobileRichMarkdownToolbar
 const styles = themedStyleSheet(() => ({
   toolbar: {
     minHeight: 42,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },

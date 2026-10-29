@@ -6,10 +6,11 @@ import {
   spacing,
   typography
 } from './mobile-tasks-dependencies'
+import { einkBorderWidth } from '../theme/mobile-theme'
 
 export const mobileTasksDetailStyles = themedStyleSheet(() => ({
   groupSeparator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginHorizontal: spacing.md
   },
@@ -105,7 +106,7 @@ export const mobileTasksDetailStyles = themedStyleSheet(() => ({
     gap: spacing.xs
   },
   detailChip: {
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised,
     borderRadius: 999,
@@ -159,7 +160,7 @@ export const mobileTasksDetailStyles = themedStyleSheet(() => ({
     borderRadius: radii.input,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   fieldButtonDisabled: {

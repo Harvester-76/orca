@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 
 export const mobileDiffReviewLayoutStyles = themedStyleSheet(() => ({
@@ -10,7 +10,7 @@ export const mobileDiffReviewLayoutStyles = themedStyleSheet(() => ({
   header: {
     paddingHorizontal: spacing.lg,
     paddingBottom: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   topBar: {
@@ -65,7 +65,7 @@ export const mobileDiffReviewLayoutStyles = themedStyleSheet(() => ({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.bgPanel,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   filterChipActive: {
@@ -88,7 +88,7 @@ export const mobileDiffReviewLayoutStyles = themedStyleSheet(() => ({
     paddingTop: spacing.md,
     paddingBottom: spacing.sm,
     backgroundColor: colors.bgBase,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   fileTitleRow: {
@@ -100,7 +100,7 @@ export const mobileDiffReviewLayoutStyles = themedStyleSheet(() => ({
     width: 28,
     height: 28,
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -153,7 +153,7 @@ export const mobileDiffReviewLayoutStyles = themedStyleSheet(() => ({
     padding: spacing.sm,
     borderRadius: radii.button,
     backgroundColor: colors.bgPanel,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   fileNotePressed: {
@@ -194,7 +194,7 @@ export const mobileDiffReviewLayoutStyles = themedStyleSheet(() => ({
     paddingVertical: spacing.sm,
     borderRadius: radii.button,
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.statusAmber
   },
   actionErrorText: {

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { View, Text, Pressable, TextInput, Switch } from 'react-native'
 import { ChevronDown, ChevronRight } from 'lucide-react-native'
-import { colors, spacing, radii, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
 import { MobileAgentIcon } from '../components/MobileAgentIcon'
@@ -329,7 +329,7 @@ const styles = themedStyleSheet(() => ({
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm + 2,
     fontSize: TEXT_INPUT_FONT_SIZE,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   textarea: { minHeight: 92, textAlignVertical: 'top' },
@@ -342,7 +342,7 @@ const styles = themedStyleSheet(() => ({
     flex: 1,
     height: 40,
     borderRadius: 8,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel,
     alignItems: 'center',
@@ -358,7 +358,7 @@ const styles = themedStyleSheet(() => ({
     justifyContent: 'space-between',
     backgroundColor: colors.bgPanel,
     borderRadius: radii.input,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm + 2
@@ -386,7 +386,7 @@ const styles = themedStyleSheet(() => ({
   switchDesc: { fontSize: 12, color: colors.textMuted, marginTop: 1 },
   footer: { flexDirection: 'row', gap: spacing.sm, marginTop: spacing.sm },
   button: { flex: 1, borderRadius: 8, paddingVertical: spacing.md, alignItems: 'center' },
-  cancelButton: { borderWidth: 1, borderColor: colors.borderSubtle },
+  cancelButton: { borderWidth: einkBorderWidth(1), borderColor: colors.borderSubtle },
   cancelText: { fontSize: 14, fontWeight: '600', color: colors.textPrimary },
   saveButton: { backgroundColor: colors.textPrimary },
   saveButtonDisabled: { backgroundColor: colors.bgRaised },

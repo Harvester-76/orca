@@ -1,6 +1,6 @@
 import { Pressable, Text, View } from 'react-native'
 import { X } from 'lucide-react-native'
-import { colors, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 import { useMobileTranslation } from '../i18n/use-mobile-translation'
@@ -46,7 +46,7 @@ const styles = themedStyleSheet(() => ({
     backgroundColor: colors.bgPanel,
     paddingVertical: spacing.sm,
     paddingHorizontal: spacing.lg,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   failure: { borderBottomColor: colors.statusRed },

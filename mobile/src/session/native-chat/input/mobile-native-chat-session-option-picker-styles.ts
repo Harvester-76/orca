@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../../theme/mobile-theme'
 import { themedStyleSheet } from '../../../theme/themed-styles'
 
 export const sessionOptionPickerStyles = themedStyleSheet(() => ({
@@ -30,7 +30,7 @@ export const sessionOptionPickerStyles = themedStyleSheet(() => ({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   sheetHeaderSide: {
@@ -68,7 +68,7 @@ export const sessionOptionPickerStyles = themedStyleSheet(() => ({
     marginTop: spacing.md
   },
   divided: {
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.composerBorder
   },
   pressed: {

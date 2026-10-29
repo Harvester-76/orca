@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, spacing, radii, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 
 export const mobileSessionFrameStyles = themedStyleSheet(() => ({
@@ -21,7 +21,7 @@ export const mobileSessionFrameStyles = themedStyleSheet(() => ({
   },
   sessionChrome: {
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   sessionTopBar: {
@@ -78,7 +78,7 @@ export const mobileSessionFrameStyles = themedStyleSheet(() => ({
   tabBar: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderTopWidth: 1,
+    borderTopWidth: einkBorderWidth(1),
     borderTopColor: colors.borderSubtle
   },
   // Cancels the top bar's vertical padding so tab borders run the bar's full height.
@@ -90,7 +90,7 @@ export const mobileSessionFrameStyles = themedStyleSheet(() => ({
     alignSelf: 'stretch',
     marginVertical: -spacing.xs,
     marginLeft: spacing.md,
-    borderLeftWidth: 1,
+    borderLeftWidth: einkBorderWidth(1),
     borderLeftColor: colors.borderSubtle
   },
   tabScrollFrame: {
@@ -110,12 +110,12 @@ export const mobileSessionFrameStyles = themedStyleSheet(() => ({
   },
   tabEdgeHintLeft: {
     left: 0,
-    borderRightWidth: 1,
+    borderRightWidth: einkBorderWidth(1),
     borderRightColor: colors.borderSubtle
   },
   tabEdgeHintRight: {
     right: 0,
-    borderLeftWidth: 1,
+    borderLeftWidth: einkBorderWidth(1),
     borderLeftColor: colors.borderSubtle
   },
   tabScroll: {
@@ -143,11 +143,11 @@ export const mobileSessionFrameStyles = themedStyleSheet(() => ({
     paddingVertical: spacing.sm,
     borderBottomWidth: 2,
     borderBottomColor: 'transparent',
-    borderRightWidth: 1,
+    borderRightWidth: einkBorderWidth(1),
     borderRightColor: colors.borderSubtle
   },
   tabFirst: {
-    borderLeftWidth: 1,
+    borderLeftWidth: einkBorderWidth(1),
     borderLeftColor: colors.borderSubtle
   },
   tabActive: {
@@ -176,7 +176,7 @@ export const mobileSessionFrameStyles = themedStyleSheet(() => ({
     backgroundColor: colors.bgRaised
   },
   tabActionDivider: {
-    width: StyleSheet.hairlineWidth,
+    width: einkBorderWidth(StyleSheet.hairlineWidth),
     height: 18,
     backgroundColor: colors.borderSubtle
   },

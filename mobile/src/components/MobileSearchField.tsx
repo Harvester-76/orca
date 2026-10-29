@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import { Search, X } from 'lucide-react-native'
 import { useMobileTranslation } from '../i18n/use-mobile-translation'
-import { colors, isEinkTheme, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, isEinkTheme, radii, spacing } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { useMobileColorScheme } from '../theme/use-mobile-color-scheme'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
@@ -150,7 +150,7 @@ const styles = themedStyleSheet(() => ({
     gap: spacing.sm,
     // Keep search visually distinct from surrounding panels.
     backgroundColor: colors.bgRaised,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.input,
     paddingLeft: spacing.md,

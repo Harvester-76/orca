@@ -1,5 +1,5 @@
 import { Platform } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
 
@@ -42,7 +42,7 @@ export const newWorktreeFormStyles = themedStyleSheet(() => ({
     borderRadius: radii.input,
     paddingHorizontal: spacing.md,
     paddingVertical: Platform.OS === 'ios' ? spacing.sm + 2 : spacing.sm,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   fieldButtonText: {
@@ -63,7 +63,7 @@ export const newWorktreeFormStyles = themedStyleSheet(() => ({
   sshBox: {
     backgroundColor: colors.bgRaised,
     borderRadius: radii.input,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
@@ -104,7 +104,7 @@ export const newWorktreeFormStyles = themedStyleSheet(() => ({
   },
   sshConnectButton: {
     borderRadius: radii.button,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.xs
@@ -125,7 +125,7 @@ export const newWorktreeFormStyles = themedStyleSheet(() => ({
     paddingHorizontal: spacing.md,
     paddingVertical: Platform.OS === 'ios' ? spacing.sm + 2 : spacing.sm,
     fontSize: TEXT_INPUT_FONT_SIZE,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   error: {
@@ -172,7 +172,7 @@ export const newWorktreeFormStyles = themedStyleSheet(() => ({
   setupBox: {
     backgroundColor: colors.bgRaised,
     borderRadius: radii.input,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     padding: spacing.md
   },
@@ -194,7 +194,7 @@ export const newWorktreeFormStyles = themedStyleSheet(() => ({
   setupChoiceButton: {
     flex: 1,
     alignItems: 'center',
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     paddingVertical: spacing.sm

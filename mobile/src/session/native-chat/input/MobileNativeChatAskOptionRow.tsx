@@ -1,6 +1,6 @@
 import { Pressable, Text, View } from 'react-native'
 import { Check } from 'lucide-react-native'
-import { colors, radii, spacing, typography } from '../../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../../theme/mobile-theme'
 import { themedStyleSheet } from '../../../theme/themed-styles'
 import { useMobileColorScheme } from '../../../theme/use-mobile-color-scheme'
 
@@ -58,7 +58,7 @@ const styles = themedStyleSheet(() => ({
     padding: spacing.sm,
     borderRadius: radii.card,
     backgroundColor: colors.bgRaised,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     marginBottom: spacing.xs
   },
@@ -68,7 +68,7 @@ const styles = themedStyleSheet(() => ({
   check: {
     width: 18,
     height: 18,
-    borderWidth: 1.5,
+    borderWidth: einkBorderWidth(1.5),
     borderColor: colors.textMuted,
     alignItems: 'center',
     justifyContent: 'center'

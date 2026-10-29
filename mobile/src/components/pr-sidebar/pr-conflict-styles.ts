@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../theme/mobile-theme'
 import { themedStyleSheet } from '../../theme/themed-styles'
 
 // Match desktop conflict section’s muted layout without growing shared sidebar styles.
@@ -32,7 +32,7 @@ export const prConflictStyles = themedStyleSheet(() => ({
     gap: spacing.xs
   },
   fileRow: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised,
     borderRadius: radii.button,
@@ -55,7 +55,7 @@ export const prConflictStyles = themedStyleSheet(() => ({
     marginTop: spacing.xs
   },
   commandBox: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised,
     borderRadius: radii.button,
@@ -77,7 +77,7 @@ export const prConflictStyles = themedStyleSheet(() => ({
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing.xs,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     paddingHorizontal: spacing.sm,

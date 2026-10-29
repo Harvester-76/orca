@@ -1,5 +1,5 @@
 import { StyleSheet, type TextStyle } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet, themedStyles } from '../theme/themed-styles'
 
 export const styles = themedStyleSheet(() => ({
@@ -64,7 +64,7 @@ export const styles = themedStyleSheet(() => ({
   },
   codeBlock: {
     backgroundColor: colors.bgRaised,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.input,
     overflow: 'hidden'
@@ -77,7 +77,7 @@ export const styles = themedStyleSheet(() => ({
     minHeight: 32,
     paddingLeft: spacing.md,
     paddingRight: spacing.xs,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   codeLanguage: {
@@ -105,7 +105,7 @@ export const styles = themedStyleSheet(() => ({
     color: colors.textPrimary
   },
   imageFrame: {
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.input,
     backgroundColor: colors.bgRaised,
@@ -123,8 +123,8 @@ export const styles = themedStyleSheet(() => ({
   },
   table: {
     flexGrow: 1,
-    borderTopWidth: 1,
-    borderLeftWidth: 1,
+    borderTopWidth: einkBorderWidth(1),
+    borderLeftWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.input,
     overflow: 'hidden',
@@ -134,8 +134,8 @@ export const styles = themedStyleSheet(() => ({
     flexDirection: 'row'
   },
   tableCell: {
-    borderRightWidth: 1,
-    borderBottomWidth: 1,
+    borderRightWidth: einkBorderWidth(1),
+    borderBottomWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
@@ -181,7 +181,7 @@ export const styles = themedStyleSheet(() => ({
   },
   rule: {
     marginVertical: spacing.xs,
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle
   }
 }))

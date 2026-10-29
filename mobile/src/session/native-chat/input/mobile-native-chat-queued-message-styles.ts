@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../../theme/mobile-theme'
 import { COMPOSER_INSET_TOP } from '../composer/mobile-native-chat-composer-styles'
 import { themedStyleSheet } from '../../../theme/themed-styles'
 
@@ -21,7 +21,7 @@ export const queuedMessageStyles = themedStyleSheet(() => ({
     backgroundColor: colors.bgPanel,
     borderTopLeftRadius: 18,
     borderTopRightRadius: 18,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomWidth: 0,
     borderColor: colors.composerBorder,
     overflow: 'hidden'
@@ -114,7 +114,7 @@ export const queuedMessageStyles = themedStyleSheet(() => ({
     paddingLeft: spacing.md
   },
   divided: {
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.composerBorder
   },
   textColumn: {

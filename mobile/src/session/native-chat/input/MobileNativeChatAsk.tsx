@@ -11,7 +11,7 @@ import {
   askTypedText,
   toggleAskOption
 } from '../../../../../src/shared/native-chat-ask-card-rules'
-import { colors, radii, spacing, typography } from '../../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../../theme/mobile-theme'
 import { themedStyleSheet } from '../../../theme/themed-styles'
 import { useMobileColorScheme } from '../../../theme/use-mobile-color-scheme'
 import type { Translate } from '../../../i18n/mobile-i18n'
@@ -293,13 +293,13 @@ const styles = themedStyleSheet(() => ({
     flexShrink: 1,
     minHeight: 0,
     backgroundColor: colors.bgPanel,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle
   },
   tabs: {
     flexGrow: 0,
     paddingTop: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   tabsContent: {
@@ -341,7 +341,7 @@ const styles = themedStyleSheet(() => ({
   },
   input: {
     backgroundColor: colors.bgRaised,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     color: colors.textPrimary,
@@ -356,7 +356,7 @@ const styles = themedStyleSheet(() => ({
     justifyContent: 'space-between',
     padding: spacing.md,
     gap: spacing.sm,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle
   },
   cancel: {

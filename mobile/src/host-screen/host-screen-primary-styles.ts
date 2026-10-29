@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet } from '../theme/themed-styles'
 
 export const hostScreenPrimaryStyles = themedStyleSheet(() => ({
@@ -12,7 +12,7 @@ export const hostScreenPrimaryStyles = themedStyleSheet(() => ({
   },
   topChrome: {
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   statusBar: {
@@ -61,7 +61,7 @@ export const hostScreenPrimaryStyles = themedStyleSheet(() => ({
     paddingHorizontal: spacing.sm,
     borderRadius: radii.button,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   reconnectButtonText: {
@@ -75,14 +75,14 @@ export const hostScreenPrimaryStyles = themedStyleSheet(() => ({
     paddingVertical: spacing.xs + 2,
     paddingHorizontal: spacing.md,
     gap: spacing.sm,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   embeddedToolbar: {
     paddingVertical: spacing.xs + 2,
     paddingHorizontal: spacing.sm,
     gap: spacing.xs,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   embeddedToolbarRow: {
@@ -105,7 +105,7 @@ export const hostScreenPrimaryStyles = themedStyleSheet(() => ({
     paddingHorizontal: spacing.sm + 2,
     paddingVertical: spacing.xs,
     borderRadius: 12,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   filterChipActive: {
@@ -145,7 +145,7 @@ export const hostScreenPrimaryStyles = themedStyleSheet(() => ({
   searchBar: {
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { themedStyleSheet, themedStyles } from '../theme/themed-styles'
 import { diffStyles } from './mobile-source-control-diff-styles'
 import { listStyles } from './mobile-source-control-list-styles'
@@ -11,7 +11,7 @@ const baseStyles = themedStyleSheet(() => ({
   },
   header: {
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   topBar: {
@@ -65,7 +65,7 @@ const baseStyles = themedStyleSheet(() => ({
     padding: spacing.md,
     borderRadius: radii.card,
     backgroundColor: colors.bgPanel,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   summaryHeader: {
@@ -121,7 +121,7 @@ const baseStyles = themedStyleSheet(() => ({
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.xs,
     borderRadius: radii.button,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.statusAmber,
     backgroundColor: colors.bgRaised,
     alignItems: 'center',
@@ -151,7 +151,7 @@ const baseStyles = themedStyleSheet(() => ({
     paddingVertical: spacing.sm,
     borderRadius: radii.button,
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.statusAmber
   },
   reconnectBannerText: {
@@ -164,7 +164,7 @@ const baseStyles = themedStyleSheet(() => ({
     paddingVertical: spacing.sm,
     borderRadius: radii.button,
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.statusRed
   },
   actionErrorText: {
@@ -221,7 +221,7 @@ const baseStyles = themedStyleSheet(() => ({
   },
   createPrButtonDisabled: {
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   createPrButtonPressed: {
