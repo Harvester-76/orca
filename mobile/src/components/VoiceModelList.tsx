@@ -1,6 +1,6 @@
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native'
 import { Check, Download, Trash2 } from 'lucide-react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import {
   isModelInFlight,
   type MobileSpeechModel,
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
   selectedTag: { flexDirection: 'row', alignItems: 'center', gap: 4 },
   selectedText: { color: colors.statusGreen, fontSize: typography.metaSize, fontWeight: '600' },
   separator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginHorizontal: spacing.md
   }

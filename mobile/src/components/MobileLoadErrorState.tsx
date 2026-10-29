@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 
 /** A failed load: the message with its Retry button centered under it as one group. */
 export function MobileLoadErrorState({
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     paddingHorizontal: spacing.lg
   },

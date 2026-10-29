@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../theme/mobile-theme'
 
 export const hostScreenSecondaryStyles = StyleSheet.create({
   errorText: {
@@ -92,7 +92,7 @@ export const hostScreenSecondaryStyles = StyleSheet.create({
     color: colors.textPrimary
   },
   filterSeparator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginHorizontal: spacing.md
   },

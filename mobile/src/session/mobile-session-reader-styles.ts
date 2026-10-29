@@ -1,6 +1,6 @@
 import { Platform, StyleSheet } from 'react-native'
 
-import { colors, spacing, radii, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 
 export const mobileSessionReaderStyles = StyleSheet.create({
   markdownTextInput: {
@@ -57,7 +57,7 @@ export const mobileSessionReaderStyles = StyleSheet.create({
     gap: spacing.sm,
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },
@@ -83,7 +83,7 @@ export const mobileSessionReaderStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing.xs,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     paddingHorizontal: spacing.sm,

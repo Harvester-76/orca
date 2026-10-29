@@ -11,7 +11,7 @@ import { isTextBlock, type NativeChatBlock } from '../../../src/shared/native-ch
 import { MobileMarkdown } from '../components/MobileMarkdown'
 import { MobileSelectableText as Text } from '../components/MobileSelectableText'
 import { INLINE_TEXT_SELECTION } from '../components/inline-text-selection'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { MONO_SIZE, TEXT_SIZE } from './mobile-native-chat-message-styles'
 
 const TONE_COLOR: Record<NativeChatNoticeTone, string> = {
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
   },
   rule: {
     flex: 1,
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle
   },
   dividerLabel: {
@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
     fontFamily: typography.monoFamily
   },
   card: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.row,
     backgroundColor: colors.bgPanel,

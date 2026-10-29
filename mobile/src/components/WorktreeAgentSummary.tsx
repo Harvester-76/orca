@@ -1,7 +1,7 @@
 import { ChevronDown, ChevronRight } from 'lucide-react-native'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import type { RuntimeWorktreeAgentRow } from '../../../src/shared/runtime-types'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing } from '../theme/mobile-theme'
 import { agentDotState } from '../worktree/agent-row-display'
 import { AgentStateDot } from './AgentStateDot'
 import { MobileAgentIcon } from './MobileAgentIcon'
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     borderRadius: radii.button
   },
   summaryCollapsed: {
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised
   },

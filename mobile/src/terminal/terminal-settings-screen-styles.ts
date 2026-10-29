@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 
 export const terminalSettingsScreenStyles = StyleSheet.create({
   container: {
@@ -84,7 +84,7 @@ export const terminalSettingsScreenStyles = StyleSheet.create({
     marginTop: 2
   },
   separator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginHorizontal: spacing.md
   }

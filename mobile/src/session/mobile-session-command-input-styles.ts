@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, spacing, radii, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
 
 export const mobileSessionCommandInputStyles = StyleSheet.create({
@@ -9,7 +9,7 @@ export const mobileSessionCommandInputStyles = StyleSheet.create({
     alignItems: 'flex-start',
     gap: spacing.sm,
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm
@@ -51,7 +51,7 @@ export const mobileSessionCommandInputStyles = StyleSheet.create({
   },
   createButton: {
     backgroundColor: colors.bgRaised,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     paddingHorizontal: spacing.xl,
     paddingVertical: spacing.sm + 2,
@@ -71,7 +71,7 @@ export const mobileSessionCommandInputStyles = StyleSheet.create({
   accessoryBar: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderTopWidth: 1,
+    borderTopWidth: einkBorderWidth(1),
     borderTopColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },
@@ -99,7 +99,7 @@ export const mobileSessionCommandInputStyles = StyleSheet.create({
     backgroundColor: colors.textPrimary
   },
   customAccessoryKey: {
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   accessoryKeyDisabled: {
@@ -146,7 +146,7 @@ export const mobileSessionCommandInputStyles = StyleSheet.create({
     minHeight: 46,
     paddingVertical: spacing.xs + 2,
     paddingHorizontal: spacing.md,
-    borderTopWidth: 1,
+    borderTopWidth: einkBorderWidth(1),
     borderTopColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },
@@ -173,7 +173,7 @@ export const mobileSessionCommandInputStyles = StyleSheet.create({
     alignItems: 'center',
     gap: spacing.sm,
     backgroundColor: colors.bgRaised,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.input,
     paddingHorizontal: spacing.sm + 2
@@ -207,7 +207,7 @@ export const mobileSessionCommandInputStyles = StyleSheet.create({
     width: 34,
     height: 34,
     borderRadius: 17,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: 'transparent',
     alignItems: 'center',
     justifyContent: 'center',

@@ -12,7 +12,7 @@ import {
   Trash2
 } from 'lucide-react-native'
 import { ActionSheetModal } from '../components/ActionSheetModal'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import {
   mobileQueuePauseLabel,
   type MobileQueuedMessageCard
@@ -291,7 +291,7 @@ const styles = StyleSheet.create({
   box: {
     backgroundColor: colors.bgPanel,
     borderRadius: radii.row,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     overflow: 'hidden'
   },
@@ -303,7 +303,7 @@ const styles = StyleSheet.create({
     paddingLeft: spacing.md
   },
   divided: {
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle
   },
   pauseLabel: {

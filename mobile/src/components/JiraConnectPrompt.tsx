@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { TaskProviderLogo } from './TaskProviderLogo'
 
 type Props = {
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   checkAgainButton: {
     alignItems: 'center',
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel,
     borderRadius: radii.input,

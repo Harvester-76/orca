@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 
 // Styles for the hub's segmented control and the branch-card PR chip. Split from
 // mobile-source-control-styles.ts so neither file crosses the line limit.
@@ -12,7 +12,7 @@ export const hubStyles = StyleSheet.create({
     alignItems: 'stretch',
     width: '100%',
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   segment: {
@@ -47,7 +47,7 @@ export const hubStyles = StyleSheet.create({
     gap: spacing.sm,
     marginTop: spacing.md,
     paddingTop: spacing.md,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle
   },
   chipPressed: {
@@ -66,7 +66,7 @@ export const hubStyles = StyleSheet.create({
     paddingHorizontal: spacing.sm,
     paddingVertical: 1,
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth)
   },
   statePillText: {
     fontSize: typography.metaSize,

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../theme/mobile-theme'
 
 export const troubleshootScreenStyles = StyleSheet.create({
   container: {
@@ -91,7 +91,7 @@ export const troubleshootScreenStyles = StyleSheet.create({
     marginBottom: spacing.lg
   },
   separator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginHorizontal: spacing.md
   },

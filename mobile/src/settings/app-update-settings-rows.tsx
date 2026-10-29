@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import type { KnownAppUpdate } from '../storage/app-update-preferences'
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../theme/mobile-theme'
 import { formatTimeAgo } from '../worktree/agent-row-display'
 
 export type AppUpdateCheckRowStatus = 'idle' | 'checking' | 'up-to-date' | 'failed'
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   rowValue: { fontSize: typography.metaSize, color: colors.textSecondary },
   actionValue: { fontSize: typography.bodySize, fontWeight: '600', color: colors.textPrimary },
   separator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginHorizontal: spacing.md
   }

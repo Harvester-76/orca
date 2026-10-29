@@ -9,7 +9,7 @@ import {
   type TextInputProps
 } from 'react-native'
 import { Search, X } from 'lucide-react-native'
-import { colors, isEinkTheme, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, isEinkTheme, radii, spacing } from '../theme/mobile-theme'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
 
 // Why: toolbar/list chrome paints and settles after the open tap; native
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     // Keep search visually distinct from surrounding panels.
     backgroundColor: colors.bgRaised,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.input,
     paddingLeft: spacing.md,

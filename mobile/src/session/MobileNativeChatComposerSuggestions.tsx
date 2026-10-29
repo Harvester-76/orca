@@ -1,5 +1,5 @@
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../theme/mobile-theme'
 import type { SlashCommandSuggestion } from '../../../src/shared/native-chat-slash-commands'
 
 /** One row of the composer autocomplete: an agent slash command (with its
@@ -53,7 +53,7 @@ export function MobileNativeChatComposerSuggestions({
 
 const styles = StyleSheet.create({
   suggestions: {
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   suggestion: {
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle,
     gap: 1
   },

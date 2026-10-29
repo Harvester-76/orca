@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, spacing, radii, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 
 export const mobileSessionReviewCommentStyles = StyleSheet.create({
   diffCommentAddButton: {
@@ -23,7 +23,7 @@ export const mobileSessionReviewCommentStyles = StyleSheet.create({
     marginTop: spacing.xs
   },
   diffCommentCard: {
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     backgroundColor: colors.bgPanel,
@@ -59,7 +59,7 @@ export const mobileSessionReviewCommentStyles = StyleSheet.create({
     marginLeft: 44,
     marginRight: spacing.sm,
     marginTop: spacing.xs,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     backgroundColor: colors.bgPanel,
@@ -117,7 +117,7 @@ export const mobileSessionReviewCommentStyles = StyleSheet.create({
     overflow: 'hidden',
     color: colors.textSecondary,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     paddingHorizontal: spacing.sm,
@@ -136,7 +136,7 @@ export const mobileSessionReviewCommentStyles = StyleSheet.create({
     alignItems: 'center',
     gap: spacing.xs,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     paddingHorizontal: spacing.md,
@@ -165,7 +165,7 @@ export const mobileSessionReviewCommentStyles = StyleSheet.create({
   },
   toastText: {
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     color: colors.textPrimary,
     fontSize: 13,

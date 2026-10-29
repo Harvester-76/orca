@@ -6,6 +6,7 @@ import {
   spacing,
   typography
 } from './mobile-tasks-dependencies'
+import { einkBorderWidth } from '../theme/mobile-theme'
 
 export const mobileTasksProjectPickerStyles = StyleSheet.create({
   boardContainer: {
@@ -15,7 +16,7 @@ export const mobileTasksProjectPickerStyles = StyleSheet.create({
   boardColumn: {
     width: 280,
     maxHeight: '100%',
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     backgroundColor: colors.bgPanel,
@@ -27,7 +28,7 @@ export const mobileTasksProjectPickerStyles = StyleSheet.create({
     gap: spacing.xs,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   boardTitle: {
@@ -44,7 +45,7 @@ export const mobileTasksProjectPickerStyles = StyleSheet.create({
     margin: spacing.sm,
     marginBottom: 0,
     borderRadius: radii.card,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgBase,
     padding: spacing.md
@@ -70,7 +71,7 @@ export const mobileTasksProjectPickerStyles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
     marginBottom: spacing.md,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.statusAmber,
     borderRadius: radii.card,
     backgroundColor: colors.bgPanel
@@ -96,7 +97,7 @@ export const mobileTasksProjectPickerStyles = StyleSheet.create({
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.sm,
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   projectDataNoticeText: {
@@ -134,7 +135,7 @@ export const mobileTasksProjectPickerStyles = StyleSheet.create({
   },
   projectFieldPill: {
     maxWidth: '100%',
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: 999,
     backgroundColor: colors.bgPanel,
@@ -167,7 +168,7 @@ export const mobileTasksProjectPickerStyles = StyleSheet.create({
     gap: spacing.sm,
     paddingHorizontal: spacing.md + 2,
     paddingVertical: spacing.md,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   pickerRowSelected: {

@@ -10,7 +10,7 @@ import {
   View
 } from 'react-native'
 import { ArrowUp, ImagePlus, Mic, Square, X } from 'lucide-react-native'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing } from '../theme/mobile-theme'
 import { structuredSlashCommands } from '../../../src/shared/structured-agent-session-composer'
 import type { AgentSessionConversationCommand } from '../../../src/shared/agent-session-conversation-command'
 import {
@@ -355,7 +355,7 @@ export function MobileNativeChatComposer({
 const styles = StyleSheet.create({
   attachmentStrip: {
     maxHeight: 76,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },
@@ -368,7 +368,7 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised
   },
@@ -389,7 +389,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   composerInset: {
@@ -401,7 +401,7 @@ const styles = StyleSheet.create({
     gap: spacing.xs,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     backgroundColor: colors.bgPanel,

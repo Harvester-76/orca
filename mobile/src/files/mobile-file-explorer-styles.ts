@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 
 export const fileExplorerStyles = StyleSheet.create({
   container: {
@@ -8,7 +8,7 @@ export const fileExplorerStyles = StyleSheet.create({
   },
   header: {
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   topBar: {
@@ -100,7 +100,7 @@ export const fileExplorerStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     paddingHorizontal: spacing.md
   },

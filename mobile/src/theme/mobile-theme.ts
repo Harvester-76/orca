@@ -27,6 +27,13 @@ export function isEinkTheme(): boolean {
   return activeThemeId === 'eink'
 }
 
+// A hairline is one device pixel, which the panel drops; E-ink draws every border at least this thick.
+const EINK_MIN_BORDER_WIDTH = 2
+
+export function einkBorderWidth(width: number): number {
+  return isEinkTheme() ? Math.max(width, EINK_MIN_BORDER_WIDTH) : width
+}
+
 export const spacing = {
   xs: 4,
   sm: 8,

@@ -1,4 +1,5 @@
 import { StyleSheet, colors, radii, spacing, typography } from './mobile-tasks-dependencies'
+import { einkBorderWidth } from '../theme/mobile-theme'
 
 export const mobileTasksChromeStyles = StyleSheet.create({
   container: {
@@ -7,7 +8,7 @@ export const mobileTasksChromeStyles = StyleSheet.create({
   },
   topChrome: {
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   statusBar: {
@@ -50,14 +51,14 @@ export const mobileTasksChromeStyles = StyleSheet.create({
     paddingVertical: spacing.xs + 2
   },
   toolbarScroll: {
-    borderTopWidth: 1,
+    borderTopWidth: einkBorderWidth(1),
     borderTopColor: colors.borderSubtle
   },
   segmentButton: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing.xs,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     paddingHorizontal: spacing.sm + 2,
@@ -68,7 +69,7 @@ export const mobileTasksChromeStyles = StyleSheet.create({
     height: 30,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button
   },
@@ -77,7 +78,7 @@ export const mobileTasksChromeStyles = StyleSheet.create({
     height: 30,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     paddingHorizontal: spacing.sm
@@ -102,14 +103,14 @@ export const mobileTasksChromeStyles = StyleSheet.create({
   searchBar: {
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle
   },
   errorBanner: {
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.sm,
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   errorText: {
@@ -123,7 +124,7 @@ export const mobileTasksChromeStyles = StyleSheet.create({
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.sm,
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   sourceErrorCopy: {
@@ -145,7 +146,7 @@ export const mobileTasksChromeStyles = StyleSheet.create({
     fontSize: 12
   },
   sourceErrorRetry: {
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     paddingHorizontal: spacing.sm,
@@ -160,7 +161,7 @@ export const mobileTasksChromeStyles = StyleSheet.create({
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.sm,
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   sourceNoticeText: {

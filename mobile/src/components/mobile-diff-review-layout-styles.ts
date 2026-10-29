@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 
 export const mobileDiffReviewLayoutStyles = StyleSheet.create({
   safeArea: {
@@ -9,7 +9,7 @@ export const mobileDiffReviewLayoutStyles = StyleSheet.create({
   header: {
     paddingHorizontal: spacing.lg,
     paddingBottom: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   topBar: {
@@ -64,7 +64,7 @@ export const mobileDiffReviewLayoutStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.bgPanel,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   filterChipActive: {
@@ -87,7 +87,7 @@ export const mobileDiffReviewLayoutStyles = StyleSheet.create({
     paddingTop: spacing.md,
     paddingBottom: spacing.sm,
     backgroundColor: colors.bgBase,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   fileTitleRow: {
@@ -99,7 +99,7 @@ export const mobileDiffReviewLayoutStyles = StyleSheet.create({
     width: 28,
     height: 28,
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -152,7 +152,7 @@ export const mobileDiffReviewLayoutStyles = StyleSheet.create({
     padding: spacing.sm,
     borderRadius: radii.button,
     backgroundColor: colors.bgPanel,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   fileNotePressed: {
@@ -193,7 +193,7 @@ export const mobileDiffReviewLayoutStyles = StyleSheet.create({
     paddingVertical: spacing.sm,
     borderRadius: radii.button,
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.statusAmber
   },
   actionErrorText: {

@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 
 export const mobileBrowserPaneStyles = StyleSheet.create({
   root: {
@@ -15,7 +15,7 @@ export const mobileBrowserPaneStyles = StyleSheet.create({
     gap: spacing.xs,
     paddingHorizontal: spacing.sm,
     paddingVertical: 2,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },
@@ -66,7 +66,7 @@ export const mobileBrowserPaneStyles = StyleSheet.create({
   errorText: {
     color: colors.textPrimary,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     paddingHorizontal: spacing.md,
@@ -87,7 +87,7 @@ export const mobileBrowserPaneStyles = StyleSheet.create({
     width: '100%',
     maxWidth: 360,
     borderRadius: radii.card,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel,
     padding: spacing.lg
@@ -142,7 +142,7 @@ export const mobileBrowserPaneStyles = StyleSheet.create({
   },
   keyboardDock: {
     zIndex: 20,
-    borderTopWidth: 1,
+    borderTopWidth: einkBorderWidth(1),
     borderTopColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },

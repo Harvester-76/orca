@@ -7,7 +7,7 @@ import {
   nativeChatElapsedSeconds
 } from '../../../src/shared/native-chat-turn-status'
 import type { AgentTurnOutcome } from '../../../src/shared/agent-turn-outcome'
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../theme/mobile-theme'
 
 /** Seconds tick only while a turn is actually counting, so a settled transcript
  *  holds no timers. */
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md
   },
   bar: {
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   pressed: {

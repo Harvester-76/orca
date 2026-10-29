@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import { openExternalLink } from '../../platform/external-link'
 import { ChevronDown, ChevronRight } from 'lucide-react-native'
-import { colors, radii, spacing, typography } from '../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../theme/mobile-theme'
 import { MermaidDiagram } from './MermaidDiagram'
 import { isAllowedMarkdownLinkUrl } from './markdown-link-scheme'
 import {
@@ -261,7 +261,7 @@ const styles = StyleSheet.create({
   },
   codeBlock: {
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.row,
     padding: spacing.sm,
@@ -282,7 +282,7 @@ const styles = StyleSheet.create({
   listItemText: { flex: 1, marginBottom: 2 },
   bullet: { color: colors.textSecondary },
   details: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.row,
     marginBottom: spacing.sm,
@@ -300,14 +300,14 @@ const styles = StyleSheet.create({
   detailsBody: { paddingHorizontal: spacing.sm, paddingTop: spacing.xs },
   tableScroll: { marginBottom: spacing.sm },
   table: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.row,
     overflow: 'hidden'
   },
   tableRow: {
     flexDirection: 'row',
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle
   },
   tableHeaderRow: { borderTopWidth: 0, backgroundColor: colors.bgRaised },
@@ -315,7 +315,7 @@ const styles = StyleSheet.create({
     minWidth: 96,
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.xs,
-    borderLeftWidth: StyleSheet.hairlineWidth,
+    borderLeftWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderLeftColor: colors.borderSubtle
   },
   tableHeaderText: { color: colors.textPrimary, fontWeight: '700' },

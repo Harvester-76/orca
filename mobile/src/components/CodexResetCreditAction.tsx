@@ -1,6 +1,6 @@
 import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native'
 import { RotateCcw } from 'lucide-react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import type { CodexResetCreditSummary } from './codex-reset-credit'
 
 export function CodexResetCreditAction({
@@ -59,7 +59,7 @@ export function CodexResetCreditAction({
 
 const styles = StyleSheet.create({
   separator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginHorizontal: spacing.md
   },
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: spacing.sm,
     paddingHorizontal: spacing.md,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     backgroundColor: colors.bgRaised

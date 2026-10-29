@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { ChevronUp } from 'lucide-react-native'
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../theme/mobile-theme'
 
 /** A collapsed prompt above the usable composer; expanding gives it Send again. */
 export function MobileNativeChatPromptStrip({
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     paddingRight: spacing.sm,
     paddingVertical: spacing.xs,
     backgroundColor: colors.bgPanel,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle
   },
   title: { flex: 1, color: colors.textPrimary, fontSize: typography.bodySize, fontWeight: '600' }

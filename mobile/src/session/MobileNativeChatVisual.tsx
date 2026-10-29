@@ -3,7 +3,7 @@ import { ActivityIndicator, Modal, Pressable, StyleSheet, Text, View } from 'rea
 import { Maximize2, X } from 'lucide-react-native'
 import type { NativeChatVisualDirective } from '../../../src/shared/native-chat-visual-directive'
 import { useWindowSafeAreaInsets } from '../layout/side-safe-area'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import type { MobileNativeChatVisualSource } from './mobile-native-chat-visual-read'
 import { MOBILE_NATIVE_CHAT_VISUAL_INITIAL_HEIGHT } from './mobile-native-chat-visual-host-document'
 import { MobileNativeChatVisualFrame } from './MobileNativeChatVisualFrame'
@@ -154,7 +154,7 @@ function MobileNativeChatVisualFullscreen({
 
 const styles = StyleSheet.create({
   frame: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.row,
     marginBottom: spacing.sm,
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.bgPanel,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   sheet: { flex: 1, backgroundColor: colors.bgBase },
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   sheetTitle: {

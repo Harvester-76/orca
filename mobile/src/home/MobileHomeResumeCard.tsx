@@ -1,6 +1,6 @@
 import { ChevronRight, Terminal } from 'lucide-react-native'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import { colors, isEinkTheme, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, isEinkTheme, radii, spacing } from '../theme/mobile-theme'
 import type { HomeResumeCard } from '../worktree/home-resume-card'
 
 const REPO_COLORS = ['#8b5cf6', '#3b82f6', '#22c55e', '#f59e0b', '#ef4444', '#ec4899', '#06b6d4']
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     paddingLeft: spacing.md,

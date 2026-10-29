@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 
 export const styles = StyleSheet.create({
   container: {
@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.sm,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   backButton: {
@@ -171,7 +171,7 @@ export const styles = StyleSheet.create({
   preview: {
     marginTop: spacing.sm,
     paddingTop: spacing.sm,
-    borderTopWidth: 1,
+    borderTopWidth: einkBorderWidth(1),
     borderTopColor: colors.borderSubtle,
     gap: spacing.sm
   },

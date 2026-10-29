@@ -6,7 +6,7 @@ import { mobileConnectionPathLabel } from '../transport/mobile-connection-path-l
 import { useHostDisplay } from '../transport/use-host-display'
 import type { MobileConnectionPath } from '../transport/stable-logical-rpc-client'
 import type { ConnectionState, HostCatalogEntry, HostProfile } from '../transport/types'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing } from '../theme/mobile-theme'
 import { homeHostWorktreeSummary, type HostWorktreeInfo } from '../worktree/home-worktree-info'
 import { StatusDot } from './StatusDot'
 
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: radii.card,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     overflow: 'hidden'
   },

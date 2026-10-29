@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import type { ConnectionLogEntry } from '../transport/types'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 
 type Props = {
   entries: ConnectionLogEntry[]
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: colors.bgPanel,
     borderRadius: radii.card,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     paddingVertical: spacing.sm,
     paddingHorizontal: spacing.md

@@ -8,7 +8,7 @@ import {
   Platform,
   type KeyboardTypeOptions
 } from 'react-native'
-import { colors, spacing, radii, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
 import { BottomDrawer } from './BottomDrawer'
 
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     paddingVertical: Platform.OS === 'ios' ? spacing.sm + 2 : spacing.sm,
     fontSize: TEXT_INPUT_FONT_SIZE,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   actions: {

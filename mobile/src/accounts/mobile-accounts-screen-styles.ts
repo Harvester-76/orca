@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, spacing, typography, radii } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 
 export const styles = StyleSheet.create({
   container: {
@@ -99,7 +99,7 @@ export const styles = StyleSheet.create({
     color: colors.textSecondary
   },
   separator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginHorizontal: spacing.md
   },

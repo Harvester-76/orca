@@ -3,7 +3,7 @@
 
 import { Pressable, StyleSheet, Switch, Text, View } from 'react-native'
 import { Check, ChevronDown, ChevronRight } from 'lucide-react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import {
   sessionOptionValueMarker,
   type SessionOptionDescriptor,
@@ -285,7 +285,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.sm,
     paddingVertical: 4,
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised
   },
@@ -319,7 +319,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: radii.card,
     backgroundColor: colors.bgRaised,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     marginBottom: spacing.xs
   },
@@ -333,7 +333,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent'
   },
   rowDivided: {
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   rowDisabled: {
@@ -343,7 +343,7 @@ const styles = StyleSheet.create({
     width: 18,
     height: 18,
     borderRadius: 9,
-    borderWidth: 1.5,
+    borderWidth: einkBorderWidth(1.5),
     borderColor: colors.textMuted,
     alignItems: 'center',
     justifyContent: 'center'

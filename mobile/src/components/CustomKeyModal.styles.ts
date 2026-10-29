@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, spacing, radii, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
 
 export const customKeyModalStyles = StyleSheet.create({
@@ -13,7 +13,7 @@ export const customKeyModalStyles = StyleSheet.create({
     height: 56,
     borderRadius: 10,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     color: colors.textPrimary,
     fontFamily: typography.monoFamily,
@@ -50,7 +50,7 @@ export const customKeyModalStyles = StyleSheet.create({
     overflow: 'hidden'
   },
   separator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginHorizontal: spacing.md
   },
@@ -97,7 +97,7 @@ export const customKeyModalStyles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     borderRadius: 10,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     alignItems: 'center',
     justifyContent: 'center'
@@ -246,7 +246,7 @@ export const customKeyModalStyles = StyleSheet.create({
     paddingVertical: spacing.sm,
     fontSize: TEXT_INPUT_FONT_SIZE,
     fontFamily: typography.monoFamily,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   switchRow: {

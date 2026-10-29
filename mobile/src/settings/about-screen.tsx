@@ -4,7 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { ChevronLeft, Globe } from 'lucide-react-native'
 import Svg, { Path } from 'react-native-svg'
 import { OrcaLogo } from '../components/OrcaLogo'
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../theme/mobile-theme'
 
 function GithubIcon({ size = 16, color = colors.textSecondary }) {
   return (
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
     color: colors.textSecondary
   },
   separator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginHorizontal: spacing.md
   },

@@ -2,7 +2,7 @@ import { useMemo, useRef, useState } from 'react'
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import { ArrowUp, Check, CircleHelp } from 'lucide-react-native'
 import { MobileNativeChatCardHeaderAction } from './MobileNativeChatCardHeaderAction'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { mobileNativeChatInputStyles } from './mobile-native-chat-input-styles'
 import {
   formatQuestionAnswerByIndexes,
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     backgroundColor: colors.bgPanel,
     borderRadius: radii.card,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   header: {
@@ -247,7 +247,7 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm,
     backgroundColor: colors.bgRaised,
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   optionSelected: {
@@ -270,7 +270,7 @@ const styles = StyleSheet.create({
     width: 20,
     height: 20,
     borderRadius: radii.button,
-    borderWidth: 1.5,
+    borderWidth: einkBorderWidth(1.5),
     borderColor: colors.textMuted,
     alignItems: 'center',
     justifyContent: 'center'

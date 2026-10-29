@@ -6,7 +6,7 @@ import { ActionSheetContent } from '../components/ActionSheetModal'
 import { BottomDrawer } from '../components/BottomDrawer'
 import { useClipboardWriter } from '../platform/clipboard'
 import { useWindowSafeAreaInsets } from '../layout/side-safe-area'
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../theme/mobile-theme'
 import { nativeChatMessagePlainText } from './mobile-native-chat-message-plain-text'
 
 type Props = {
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: spacing.lg,
     paddingVertical: spacing.md,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   title: { color: colors.textPrimary, fontSize: typography.titleSize, fontWeight: '600' },

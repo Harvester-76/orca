@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { colors, spacing, radii, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 
 export const mobileSessionFrameStyles = StyleSheet.create({
   container: {
@@ -22,7 +22,7 @@ export const mobileSessionFrameStyles = StyleSheet.create({
   },
   sessionChrome: {
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   sessionTopBar: {
@@ -81,7 +81,7 @@ export const mobileSessionFrameStyles = StyleSheet.create({
   tabBar: {
     flexDirection: 'row',
     alignItems: 'center',
-    borderTopWidth: 1,
+    borderTopWidth: einkBorderWidth(1),
     borderTopColor: colors.borderSubtle
   },
   tabScroll: {
@@ -139,7 +139,7 @@ export const mobileSessionFrameStyles = StyleSheet.create({
   // Divider between the + new-terminal button and the Quick Commands launcher,
   // matching the tab strip's borderSubtle separators.
   tabActionDivider: {
-    width: StyleSheet.hairlineWidth,
+    width: einkBorderWidth(StyleSheet.hairlineWidth),
     height: 18,
     backgroundColor: colors.borderSubtle
   },

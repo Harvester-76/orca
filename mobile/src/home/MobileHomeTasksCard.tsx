@@ -2,7 +2,7 @@ import { ChevronRight, ListTodo } from 'lucide-react-native'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { TaskProviderLogo } from '../components/TaskProviderLogo'
 import type { TaskProvider } from '../../../src/shared/task-providers'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing } from '../theme/mobile-theme'
 
 const TASK_PROVIDER_LABELS: Record<TaskProvider, string> = {
   github: 'GitHub',
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     minHeight: 72,

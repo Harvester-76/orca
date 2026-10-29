@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { Code, Eye } from 'lucide-react-native'
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../theme/mobile-theme'
 import { htmlPreviewWithInertLinks } from './html-preview-inert-links'
 import { useHtmlPreviewLinkGrant } from './use-html-preview-link-grant'
 // The native component's own prop type, so a change to it fails here rather than drifting.
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   toggle: {
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
   },
   toggleActive: {
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   toggleText: { color: colors.textSecondary, fontSize: typography.metaSize },

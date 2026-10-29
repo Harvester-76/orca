@@ -1,6 +1,6 @@
 import { QrCode } from 'lucide-react-native'
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing } from '../theme/mobile-theme'
 
 const ONBOARDING_STEPS = [
   {
@@ -114,13 +114,13 @@ const styles = StyleSheet.create({
     gap: 14,
     paddingVertical: spacing.lg
   },
-  stepRowBorder: { borderTopWidth: 1, borderTopColor: colors.borderSubtle },
+  stepRowBorder: { borderTopWidth: einkBorderWidth(1), borderTopColor: colors.borderSubtle },
   stepNum: {
     width: 28,
     height: 28,
     borderRadius: 8,
     backgroundColor: 'rgba(255,255,255,0.04)',
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     alignItems: 'center',
     justifyContent: 'center',

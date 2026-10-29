@@ -1,7 +1,7 @@
 import { memo, useCallback, useEffect, useState } from 'react'
 import { ActivityIndicator, FlatList, Pressable, StyleSheet, Text, View } from 'react-native'
 import { ChevronDown, ChevronRight } from 'lucide-react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import type { ConnectionState } from '../transport/types'
 import type { RpcClient } from '../transport/rpc-client'
 import { useForceReconnect } from '../transport/client-context'
@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.bgRaised
   },
   retryText: { color: colors.textPrimary, fontSize: typography.bodySize, fontWeight: '600' },
-  commit: { borderBottomWidth: 1, borderBottomColor: colors.borderSubtle },
+  commit: { borderBottomWidth: einkBorderWidth(1), borderBottomColor: colors.borderSubtle },
   commitHeader: {
     flexDirection: 'row',
     alignItems: 'center',

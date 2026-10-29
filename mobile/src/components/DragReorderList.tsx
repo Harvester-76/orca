@@ -13,7 +13,7 @@ import Animated, {
   type AnimatedRef,
   type SharedValue
 } from 'react-native-reanimated'
-import { colors, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing } from '../theme/mobile-theme'
 import { triggerMediumImpact, triggerSelection } from '../platform/haptics'
 import {
   clampDragReorderIndex,
@@ -343,7 +343,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: spacing.md,
     right: spacing.md,
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle
   }
 })

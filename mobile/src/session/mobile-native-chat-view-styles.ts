@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../theme/mobile-theme'
 
 export const styles = StyleSheet.create({
   root: {
@@ -89,7 +89,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   fabBottom: {

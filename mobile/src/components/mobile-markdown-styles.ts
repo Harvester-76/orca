@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 
 export const styles = StyleSheet.create({
   root: {
@@ -59,7 +59,7 @@ export const styles = StyleSheet.create({
   },
   codeBlock: {
     backgroundColor: colors.bgRaised,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.input,
     padding: spacing.sm
@@ -77,7 +77,7 @@ export const styles = StyleSheet.create({
     color: colors.textPrimary
   },
   imageFrame: {
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.input,
     backgroundColor: colors.bgRaised,
@@ -91,8 +91,8 @@ export const styles = StyleSheet.create({
     color: colors.textSecondary
   },
   table: {
-    borderTopWidth: 1,
-    borderLeftWidth: 1,
+    borderTopWidth: einkBorderWidth(1),
+    borderLeftWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.input,
     overflow: 'hidden',
@@ -102,8 +102,8 @@ export const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   tableCell: {
-    borderRightWidth: 1,
-    borderBottomWidth: 1,
+    borderRightWidth: einkBorderWidth(1),
+    borderBottomWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.xs,
@@ -145,7 +145,7 @@ export const styles = StyleSheet.create({
     color: colors.textSecondary
   },
   rule: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle
   }
 })

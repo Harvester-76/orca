@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { ActivityIndicator, Pressable, StyleSheet, Switch, Text, View } from 'react-native'
 import { Check, Download } from 'lucide-react-native'
 import { BottomDrawer } from './BottomDrawer'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import type { RpcClient } from '../transport/rpc-client'
 import { triggerError, triggerSuccess } from '../platform/haptics'
 import { useDictationSetupPoller } from '../dictation/use-dictation-setup-poller'
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingVertical: spacing.sm,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle,
     marginBottom: spacing.sm
   },

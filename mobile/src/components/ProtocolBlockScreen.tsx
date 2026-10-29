@@ -2,7 +2,7 @@ import { useWallAppUpdate } from '../app-update/use-wall-app-update'
 import { openExternalLink } from '../platform/external-link'
 import { useRouteHandoff } from '../navigation/route-handoff'
 import { Platform, Pressable, StyleSheet, Text, View } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import type { CompatVerdict } from '../transport/protocol-compat'
 import type { MobileWebBundleCompatVerdict } from '../transport/mobile-web-bundle-compat'
 
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.bgPanel,
     borderRadius: radii.card,
     padding: spacing.lg,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   title: {

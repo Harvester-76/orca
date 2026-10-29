@@ -1,6 +1,6 @@
 import { ChevronRight } from 'lucide-react-native'
 import { Pressable, StyleSheet, Text } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 
 export function HostDiagnosticsLink({ onPress }: { onPress: () => void }): React.JSX.Element {
   return (
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     borderRadius: radii.button,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     flexDirection: 'row',
     alignItems: 'center',

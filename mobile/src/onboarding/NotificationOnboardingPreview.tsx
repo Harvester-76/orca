@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Animated, Easing, StyleSheet, Text, View } from 'react-native'
 import { OrcaLogo } from '../components/OrcaLogo'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { useReducedMotionEnabled } from './use-reduced-motion'
 
 const SAMPLE_NOTIFICATIONS = [
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     gap: spacing.md,
     backgroundColor: colors.bgPanel,
     borderColor: colors.borderSubtle,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderRadius: radii.card,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.md

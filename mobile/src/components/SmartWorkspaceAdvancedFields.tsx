@@ -1,6 +1,6 @@
 import { Platform, StyleSheet, Switch, Text, TextInput, View } from 'react-native'
 import type { MobileComposerSource } from '../tasks/use-mobile-composer-source'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing } from '../theme/mobile-theme'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
 
 type Props = {
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     paddingVertical: Platform.OS === 'ios' ? spacing.sm + 2 : spacing.sm,
     fontSize: TEXT_INPUT_FONT_SIZE,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   reuseRow: {

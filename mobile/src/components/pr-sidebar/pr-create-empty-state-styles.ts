@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../theme/mobile-theme'
 
 export const prCreateEmptyStateStyles = StyleSheet.create({
   section: {
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle,
     overflow: 'hidden'
   },
@@ -16,7 +16,7 @@ export const prCreateEmptyStateStyles = StyleSheet.create({
     gap: spacing.sm,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   headerTitle: {
@@ -80,7 +80,7 @@ export const prCreateEmptyStateStyles = StyleSheet.create({
   },
   composerArea: {
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle,
     padding: spacing.md
   },

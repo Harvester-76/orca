@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { View, Text, Pressable, StyleSheet } from 'react-native'
 import { Check } from 'lucide-react-native'
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../theme/mobile-theme'
 import { BottomDrawer } from './BottomDrawer'
 
 export type PickerOption<T extends string = string> = {
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   },
   separator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginHorizontal: spacing.md
   },

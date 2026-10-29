@@ -1,6 +1,6 @@
 import { ArrowUpFromLine, X } from 'lucide-react-native'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing } from '../theme/mobile-theme'
 
 /** Home's update notice, drawn in the host card's frame so it reads as part of that list. */
 export function AppUpdateCard(props: {
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: radii.card,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     overflow: 'hidden'
   },

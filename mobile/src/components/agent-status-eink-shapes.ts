@@ -1,5 +1,5 @@
 import type { ViewStyle } from 'react-native'
-import { colors } from '../theme/mobile-theme'
+import { colors, einkBorderWidth } from '../theme/mobile-theme'
 
 export type AgentStatusEinkShape =
   | 'filled'
@@ -19,14 +19,14 @@ export function agentStatusEinkShapeStyle(shape: AgentStatusEinkShape, size: num
     case 'square':
       return { ...box, backgroundColor: ink }
     case 'ring':
-      return { ...box, borderRadius: size / 2, borderWidth: 1.5, borderColor: ink }
+      return { ...box, borderRadius: size / 2, borderWidth: einkBorderWidth(1.5), borderColor: ink }
     case 'ring-thick':
       return { ...box, borderRadius: size / 2, borderWidth: 2.5, borderColor: ink }
     case 'ring-dotted':
       return {
         ...box,
         borderRadius: size / 2,
-        borderWidth: 1.5,
+        borderWidth: einkBorderWidth(1.5),
         borderStyle: 'dotted',
         borderColor: ink
       }

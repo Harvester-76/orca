@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { View, StyleSheet, PanResponder, Platform } from 'react-native'
 import { useGlobalSearchParams, usePathname } from 'expo-router'
-import { colors } from '../../src/theme/mobile-theme'
+import { colors, einkBorderWidth } from '../../src/theme/mobile-theme'
 import { useResponsiveLayout } from '../../src/layout/responsive-layout'
 import {
   HOST_SIDEBAR_DEFAULT_WIDTH,
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.bgBase
   },
   sidebar: {
-    borderRightWidth: 1,
+    borderRightWidth: einkBorderWidth(1),
     borderRightColor: colors.borderSubtle
   },
   // Invisible grab strip over the sidebar's right edge. Absolute + elevated so it

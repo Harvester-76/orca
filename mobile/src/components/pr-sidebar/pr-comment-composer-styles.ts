@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../theme/mobile-theme'
 import { TEXT_INPUT_FONT_SIZE } from '../../platform/text-input-font-size'
 
 // Styles for the plain-text reply / root-comment composer. Muted/monochrome to
@@ -12,7 +12,7 @@ export const prCommentComposerStyles = StyleSheet.create({
   input: {
     minHeight: 64,
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.input,
     paddingHorizontal: spacing.md,

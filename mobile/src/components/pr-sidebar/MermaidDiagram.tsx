@@ -1,7 +1,7 @@
 import { memo, useMemo, useState } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import { WebView } from 'react-native-webview'
-import { colors, radii, spacing, typography } from '../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../theme/mobile-theme'
 import { MERMAID_DIAGRAM_CONFIG } from './mermaid-diagram-config'
 import { MERMAID_ENGINE_JS } from './mermaid-webview-engine.generated'
 import { encodeJsonForScript } from '../inline-script-json'
@@ -132,7 +132,7 @@ export function buildHtml(source: string): string {
 
 const styles = StyleSheet.create({
   frame: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.row,
     marginBottom: spacing.sm,
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
   label: {
     paddingHorizontal: spacing.sm,
     paddingVertical: 2,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },

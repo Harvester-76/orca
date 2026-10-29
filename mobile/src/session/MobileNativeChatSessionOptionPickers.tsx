@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { ActivityIndicator, Keyboard, Pressable, StyleSheet, Text, View } from 'react-native'
 import { ChevronLeft, X } from 'lucide-react-native'
 import { BottomDrawer } from '../components/BottomDrawer'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import {
   sessionOptionDispatchUnconfirmed,
   type SessionOptionDescriptor,
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   sheetHeaderSide: {
@@ -238,7 +238,7 @@ const styles = StyleSheet.create({
   choiceGroup: {
     overflow: 'hidden',
     borderRadius: radii.card,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised
   },
@@ -246,7 +246,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     marginTop: spacing.md,
     borderRadius: radii.card,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised
   },

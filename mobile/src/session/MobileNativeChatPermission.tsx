@@ -4,7 +4,7 @@ import { ShieldQuestion } from 'lucide-react-native'
 import { approvalBlockedPathToShow } from '../../../src/shared/agent-session-approval-blocked-path'
 import { MobileNativeChatCardHeaderAction } from './MobileNativeChatCardHeaderAction'
 import { MobileMarkdown } from '../components/MobileMarkdown'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import {
   isNewerApprovalSubject,
   isPlanApprovalSubject
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     padding: spacing.md,
     gap: spacing.sm,
     borderRadius: radii.card,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel,
     flexShrink: 1,
@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
   },
   optionSecondary: {
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   optionPressed: {

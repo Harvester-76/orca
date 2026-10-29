@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
 
 export const smartWorkspaceSourceDrawerStyles = StyleSheet.create({
@@ -44,7 +44,7 @@ export const smartWorkspaceSourceDrawerStyles = StyleSheet.create({
   // push the TextInput out of the fill frame (and under the keyboard).
   dock: {
     flexShrink: 0,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle,
     backgroundColor: colors.bgBase,
     paddingTop: spacing.sm,
@@ -59,7 +59,7 @@ export const smartWorkspaceSourceDrawerStyles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm + 2,
     fontSize: TEXT_INPUT_FONT_SIZE,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   tabRow: {
@@ -74,7 +74,7 @@ export const smartWorkspaceSourceDrawerStyles = StyleSheet.create({
     paddingHorizontal: spacing.sm + 2,
     paddingVertical: spacing.xs + 2,
     borderRadius: radii.button,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   tabSelected: {
@@ -98,7 +98,7 @@ export const smartWorkspaceSourceDrawerStyles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.xs,
     borderRadius: radii.button,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   chipSelected: {
@@ -116,7 +116,7 @@ export const smartWorkspaceSourceDrawerStyles = StyleSheet.create({
   crossRepo: {
     backgroundColor: colors.bgRaised,
     borderRadius: radii.input,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     padding: spacing.md,
     marginBottom: spacing.sm,
@@ -135,7 +135,7 @@ export const smartWorkspaceSourceDrawerStyles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.xs + 2,
     borderRadius: radii.button,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   crossRepoDismissText: {
@@ -147,7 +147,7 @@ export const smartWorkspaceSourceDrawerStyles = StyleSheet.create({
     paddingVertical: spacing.xs + 2,
     borderRadius: radii.button,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.textSecondary
   },
   crossRepoSwitchText: {

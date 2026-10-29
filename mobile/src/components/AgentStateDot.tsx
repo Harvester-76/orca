@@ -1,7 +1,7 @@
 import { Activity } from 'lucide-react-native'
 import { Animated, StyleSheet, View } from 'react-native'
 import type { AgentDotState } from '../worktree/agent-row-display'
-import { colors, isEinkTheme } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, isEinkTheme } from '../theme/mobile-theme'
 import { agentStatusEinkShapeStyle, type AgentStatusEinkShape } from './agent-status-eink-shapes'
 import { useWorkingRingRotation } from './use-working-ring-rotation'
 
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 4,
-    borderWidth: 1.5,
+    borderWidth: einkBorderWidth(1.5),
     borderStyle: 'dashed',
     borderColor: colors.statusAmber
   },
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     width: 6,
     height: 6,
     borderRadius: 3,
-    borderWidth: 1.5,
+    borderWidth: einkBorderWidth(1.5),
     borderColor: AGENT_WORKING_COLOR,
     borderTopColor: 'transparent'
   }

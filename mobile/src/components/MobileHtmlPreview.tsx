@@ -3,7 +3,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { WebView } from 'react-native-webview'
 import { Code, Eye } from 'lucide-react-native'
 import { openExternalLink } from '../platform/external-link'
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../theme/mobile-theme'
 
 export type MobileHtmlPreviewProps = {
   html: string
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   toggle: {
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   },
   toggleActive: {
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle
   },
   toggleText: { color: colors.textSecondary, fontSize: typography.metaSize },

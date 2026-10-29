@@ -2,7 +2,7 @@ import { useMemo, useRef, useState } from 'react'
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native'
 import { Check } from 'lucide-react-native'
 import type { AskAnswerSelection, AskPrompt } from '../../../src/shared/native-chat-ask'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
 import { MobileNativeChatCardHeaderAction } from './MobileNativeChatCardHeaderAction'
 import { useMobileNativeChatAskAutoAdvance } from './use-mobile-native-chat-ask-auto-advance'
@@ -284,13 +284,13 @@ const styles = StyleSheet.create({
   card: {
     maxHeight: 380,
     backgroundColor: colors.bgPanel,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle
   },
   tabs: {
     flexGrow: 0,
     paddingTop: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   tabsContent: {
@@ -337,7 +337,7 @@ const styles = StyleSheet.create({
     padding: spacing.sm,
     borderRadius: radii.card,
     backgroundColor: colors.bgRaised,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     marginBottom: spacing.xs
   },
@@ -347,7 +347,7 @@ const styles = StyleSheet.create({
   check: {
     width: 18,
     height: 18,
-    borderWidth: 1.5,
+    borderWidth: einkBorderWidth(1.5),
     borderColor: colors.textMuted,
     alignItems: 'center',
     justifyContent: 'center'
@@ -377,7 +377,7 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: colors.bgRaised,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     color: colors.textPrimary,
@@ -392,7 +392,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: spacing.md,
     gap: spacing.sm,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle
   },
   cancel: {

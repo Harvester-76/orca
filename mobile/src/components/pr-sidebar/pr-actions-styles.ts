@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../theme/mobile-theme'
 
 // Styles for PRActionsSection (action buttons, auto-merge toggle, transient-error
 // line). Split out of mobile-pr-sidebar-styles to keep that file under the
@@ -29,7 +29,7 @@ export const prActionsStyles = StyleSheet.create({
     paddingHorizontal: spacing.md,
     borderRadius: radii.button,
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   // Neutral primary: a light fill with dark text, mirroring the desktop PR page's
@@ -85,7 +85,7 @@ export const prActionsStyles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: spacing.sm,
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },

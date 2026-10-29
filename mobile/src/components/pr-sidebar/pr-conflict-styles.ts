@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../theme/mobile-theme'
 
 // Styles for the conflicting-files section (file list + fallback notice). Muted/
 // monochrome to match the rest of the PR sidebar; split out so the section file and
@@ -35,7 +35,7 @@ export const prConflictStyles = StyleSheet.create({
     gap: spacing.xs
   },
   fileRow: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised,
     borderRadius: radii.button,
@@ -58,7 +58,7 @@ export const prConflictStyles = StyleSheet.create({
     marginTop: spacing.xs
   },
   commandBox: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgRaised,
     borderRadius: radii.button,
@@ -80,7 +80,7 @@ export const prConflictStyles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: spacing.xs,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.button,
     paddingHorizontal: spacing.sm,

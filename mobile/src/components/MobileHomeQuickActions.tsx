@@ -3,7 +3,7 @@ import { Plus, QrCode } from 'lucide-react-native'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import type { HostProfile } from '../transport/types'
 import { hostEndpointLabel } from '../transport/host-endpoint-label'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing } from '../theme/mobile-theme'
 import { PickerModal } from './PickerModal'
 
 type Props = {
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     gap: spacing.sm + 2,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm + 2,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     backgroundColor: colors.bgPanel

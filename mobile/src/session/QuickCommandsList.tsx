@@ -1,6 +1,6 @@
 import { View, Text, Pressable, TextInput, StyleSheet, ActivityIndicator } from 'react-native'
 import { Check, Plus, Search } from 'lucide-react-native'
-import { colors, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing } from '../theme/mobile-theme'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
 import { MobileAgentIcon } from '../components/MobileAgentIcon'
 import { MOBILE_AGENT_CATALOG } from '../tasks/mobile-agent-catalog'
@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     backgroundColor: colors.bgPanel,
     borderRadius: 8,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm
@@ -229,7 +229,7 @@ const styles = StyleSheet.create({
   },
   group: { backgroundColor: colors.bgPanel, borderRadius: 12, overflow: 'hidden' },
   row: { flexDirection: 'row', alignItems: 'center' },
-  rowBorder: { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: colors.borderSubtle },
+  rowBorder: { borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth), borderTopColor: colors.borderSubtle },
   rowIcon: {
     width: 26,
     height: 26,
@@ -245,7 +245,7 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     backgroundColor: colors.bgPanel,
     borderRadius: 12,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderStyle: 'dashed',
     borderColor: colors.borderSubtle,
     paddingVertical: spacing.md,

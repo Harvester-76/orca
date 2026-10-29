@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { X } from 'lucide-react-native'
-import { colors, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing } from '../theme/mobile-theme'
 
 /**
  * One dismissible line above the list, in two tones.
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.bgPanel,
     paddingVertical: spacing.sm,
     paddingHorizontal: spacing.lg,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   failure: { borderBottomColor: colors.statusRed },

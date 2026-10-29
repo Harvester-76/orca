@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Pressable, ScrollView } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useRouter } from 'expo-router'
 import { Check, ChevronLeft } from 'lucide-react-native'
-import { colors, getActiveMobileThemeId, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, getActiveMobileThemeId, radii, spacing, typography } from '../theme/mobile-theme'
 import { saveMobileThemeId } from '../theme/mobile-theme-preference'
 import type { MobileThemeId } from '../theme/mobile-theme-palettes'
 
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing.md + 2
   },
   rowDivider: {
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle
   },
   rowContent: {

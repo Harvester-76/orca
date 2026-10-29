@@ -1,6 +1,6 @@
 import { memo, useEffect, useId, useRef, useState, type ReactNode } from 'react'
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
-import { colors, radii, spacing, typography } from '../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../theme/mobile-theme'
 // The native component's own prop type, so a change to it fails here rather than drifting.
 import type { MermaidDiagramProps } from './MermaidDiagram'
 import { MERMAID_DIAGRAM_CONFIG } from './mermaid-diagram-config'
@@ -110,7 +110,7 @@ function MermaidFrame({ children }: { children: ReactNode }) {
 // and a rule of ours on the element would be a byte the native document's render does not have.
 const styles = StyleSheet.create({
   frame: {
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     borderRadius: radii.row,
     marginBottom: spacing.sm,
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
   label: {
     paddingHorizontal: spacing.sm,
     paddingVertical: 2,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },

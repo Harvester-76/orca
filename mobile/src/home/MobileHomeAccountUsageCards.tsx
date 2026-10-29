@@ -8,7 +8,7 @@ import {
   type AccountsSnapshot,
   type ProviderKey
 } from '../components/AccountUsage'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing } from '../theme/mobile-theme'
 import type { HostProfile } from '../transport/types'
 
 export function MobileHomeAccountUsageCards(props: {
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.card,
     paddingHorizontal: spacing.md,

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import { TEXT_INPUT_FONT_SIZE } from '../platform/text-input-font-size'
 
 // Changed-files list, section headers, file rows, and the commit bar. Split
@@ -45,7 +45,7 @@ export const listStyles = StyleSheet.create({
     alignItems: 'center',
     gap: spacing.sm,
     paddingVertical: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   branchStateText: {
@@ -60,7 +60,7 @@ export const listStyles = StyleSheet.create({
     alignItems: 'center',
     gap: spacing.sm,
     paddingVertical: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   fileRowPressed: {
@@ -123,7 +123,7 @@ export const listStyles = StyleSheet.create({
     padding: spacing.lg,
     paddingTop: spacing.md,
     backgroundColor: colors.bgPanel,
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle
   },
   commitRow: {
@@ -134,7 +134,7 @@ export const listStyles = StyleSheet.create({
     flex: 1,
     minHeight: 42,
     borderRadius: radii.input,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgBase,
     color: colors.textPrimary,
@@ -165,7 +165,7 @@ export const listStyles = StyleSheet.create({
   },
   commitButtonSecondary: {
     backgroundColor: 'transparent',
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle
   },
   generateButton: {
@@ -195,7 +195,7 @@ export const listStyles = StyleSheet.create({
     padding: spacing.sm,
     borderRadius: radii.button,
     backgroundColor: colors.bgRaised,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.statusRed,
     gap: spacing.sm
   },

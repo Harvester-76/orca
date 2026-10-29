@@ -17,7 +17,7 @@ import {
   Quote,
   Strikethrough
 } from 'lucide-react-native'
-import { colors, radii, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing } from '../theme/mobile-theme'
 import type { MobileRichMarkdownCommand } from './mobile-rich-markdown-editor-contract'
 
 type ToolbarItem = {
@@ -96,7 +96,7 @@ export const MobileRichMarkdownToolbar = memo(function MobileRichMarkdownToolbar
 const styles = StyleSheet.create({
   toolbar: {
     minHeight: 42,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel
   },

@@ -99,9 +99,10 @@ const einkPalette: MobileThemePalette = {
   borderSubtle: '#000000',
   editorSurface: '#ffffff',
 
+  // Grey text dithers on the panel, so every text tier is solid black.
   textPrimary: '#000000',
-  textSecondary: '#222222',
-  textMuted: '#444444',
+  textSecondary: '#000000',
+  textMuted: '#000000',
 
   surfaceBright: '#000000',
 

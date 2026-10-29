@@ -14,7 +14,7 @@ import type Animated from 'react-native-reanimated'
 import type { AnimatedRef, SharedValue } from 'react-native-reanimated'
 import { CustomKeyModal, loadCustomKeys, saveCustomKeys, type CustomKey } from './CustomKeyModal'
 import { DragReorderList } from './DragReorderList'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 import {
   TERMINAL_ACCESSORY_KEYS,
   type TerminalAccessoryKey
@@ -400,7 +400,7 @@ const styles = StyleSheet.create({
     fontFamily: typography.monoFamily
   },
   separator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginHorizontal: spacing.md
   },

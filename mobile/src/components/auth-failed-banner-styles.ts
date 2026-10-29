@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing } from '../theme/mobile-theme'
 
 /** Shared with `AuthFailedBannerActions`, a sibling file so that the page can offer Re-pair alone. */
 export const authFailedBannerStyles = StyleSheet.create({
@@ -7,7 +7,7 @@ export const authFailedBannerStyles = StyleSheet.create({
     backgroundColor: colors.bgPanel,
     paddingVertical: spacing.sm,
     paddingHorizontal: spacing.lg,
-    borderBottomWidth: 1,
+    borderBottomWidth: einkBorderWidth(1),
     borderBottomColor: colors.borderSubtle
   },
   text: {

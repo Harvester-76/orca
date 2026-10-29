@@ -1,7 +1,7 @@
 import { View, Text, Pressable, StyleSheet, Platform } from 'react-native'
 import { ChevronDown } from 'lucide-react-native'
 import { HostKindIcon } from './HostKindIcon'
-import { colors, radii, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../theme/mobile-theme'
 
 type Selection = { label: string; detail?: string }
 
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
     backgroundColor: colors.bgRaised,
     borderRadius: radii.input,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     paddingHorizontal: spacing.md,
     paddingVertical: Platform.OS === 'ios' ? spacing.sm + 2 : spacing.sm

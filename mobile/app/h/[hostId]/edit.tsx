@@ -13,7 +13,7 @@ import {
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useLocalSearchParams, useRouter } from 'expo-router'
 import { ChevronLeft } from 'lucide-react-native'
-import { colors, radii, spacing, typography } from '../../../src/theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../../src/theme/mobile-theme'
 import { loadHosts, updateHostNameAndEndpoint } from '../../../src/transport/host-store'
 import { displayHostEndpoint } from '../../../src/transport/host-endpoint'
 import { resolveHostEndpointEdit } from '../../../src/transport/host-endpoint-edit'
@@ -316,7 +316,7 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: radii.row,
     color: colors.textPrimary,

@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import type { HomeStatsSummary } from '../stats/home-stats-total'
-import { colors, spacing } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing } from '../theme/mobile-theme'
 import { MobileHomeAppUpdateCard } from './MobileHomeAppUpdateCard'
 
 function formatDuration(ms: number): string {
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   statCard: {
     flex: 1,
     backgroundColor: colors.bgPanel,
-    borderWidth: 1,
+    borderWidth: einkBorderWidth(1),
     borderColor: colors.borderSubtle,
     borderRadius: 10,
     paddingVertical: 8,

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors, radii, spacing, typography } from '../../theme/mobile-theme'
+import { colors, einkBorderWidth, radii, spacing, typography } from '../../theme/mobile-theme'
 import { TEXT_INPUT_FONT_SIZE } from '../../platform/text-input-font-size'
 
 // Fixed inline-dock width (KTD2/U4): leaves the diff >= ~380px within the 700px
@@ -11,7 +11,7 @@ export const mobilePrSidebarStyles = StyleSheet.create({
   dockColumn: {
     width: PR_SIDEBAR_DOCK_WIDTH,
     backgroundColor: colors.bgPanel,
-    borderLeftWidth: StyleSheet.hairlineWidth,
+    borderLeftWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderLeftColor: colors.borderSubtle
   },
   // Inner scroll area; the diff and the sidebar scroll independently. Flat layout
@@ -25,7 +25,7 @@ export const mobilePrSidebarStyles = StyleSheet.create({
   // card. The header row keeps its own border-b for the title/body divide.
   section: {
     backgroundColor: colors.bgPanel,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   // Section header row: title + optional trailing control, divided from the body
@@ -38,7 +38,7 @@ export const mobilePrSidebarStyles = StyleSheet.create({
     gap: spacing.sm,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.sm,
-    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderBottomColor: colors.borderSubtle
   },
   sectionHeaderTrailing: {
@@ -79,7 +79,7 @@ export const mobilePrSidebarStyles = StyleSheet.create({
     paddingHorizontal: spacing.sm,
     paddingVertical: 2,
     borderRadius: radii.button,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.bgRaised
   },
   badgeText: {
@@ -189,7 +189,7 @@ export const mobilePrSidebarStyles = StyleSheet.create({
   // Annotations / jobs sub-section, divided from the summary by a hairline border
   // (desktop `border-t pt-2`). Muted/monochrome so the detail stays subdued.
   checkDetailGroup: {
-    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderTopColor: colors.borderSubtle,
     paddingTop: spacing.sm,
     gap: spacing.xs
@@ -292,7 +292,7 @@ export const mobilePrSidebarStyles = StyleSheet.create({
   pickerSearch: {
     minHeight: 40,
     borderRadius: radii.input,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: einkBorderWidth(StyleSheet.hairlineWidth),
     borderColor: colors.borderSubtle,
     backgroundColor: colors.bgPanel,
     color: colors.textPrimary,

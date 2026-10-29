@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native'
 import { Check } from 'lucide-react-native'
 
-import { colors, spacing, typography } from '../theme/mobile-theme'
+import { colors, einkBorderWidth, spacing, typography } from '../theme/mobile-theme'
 import { BottomDrawer } from './BottomDrawer'
 import { BOTTOM_DRAWER_HIDE_DURATION_MS } from './bottom-drawer-constants'
 
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     minHeight: spacing.xl
   },
   separator: {
-    height: StyleSheet.hairlineWidth,
+    height: einkBorderWidth(StyleSheet.hairlineWidth),
     backgroundColor: colors.borderSubtle,
     marginHorizontal: spacing.md
   },
